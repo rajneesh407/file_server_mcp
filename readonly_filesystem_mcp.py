@@ -308,7 +308,7 @@ def main():
     logger.info(f"Allowed extensions: {', '.join(ALLOWED_EXTENSIONS)}")
 
     # Run the MCP server over HTTP on localhost port 8080
-    mcp.run(transport="http", host="localhost", port=8080)
+    mcp.run(transport="http", host="0.0.0.0", port=8080)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @modelcontextprotocol/server-filesystem ./uploads"
+    "start": "npx @modelcontextprotocol/server-filesystem ./uploads",
+    "postinstall": "chmod +x ./node_modules/.bin/mcp-server-filesystem"
   },
   "repository": {
     "type": "git",

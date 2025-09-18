@@ -1,0 +1,132 @@
+{
+    "data": [
+        {
+            "cells": {
+                "format": [
+                    null,
+                    ",.4f"
+                ],
+                "values": [
+                    [
+                        "Accuracy",
+                        "Precision",
+                        "AUC",
+                        "Gini",
+                        "Specificity (FPR)",
+                        "Sensitivity (TPR)"
+                    ],
+                    [
+                        0.9824,
+                        0.030534351145038167,
+                        0.7221481398582295,
+                        0.4442962797164589,
+                        0.012767668643812204,
+                        0.07547169811320754
+                    ]
+                ]
+            },
+            "header": {
+                "values": [
+                    "Measure",
+                    "Value"
+                ]
+            },
+            "type": "table",
+            "uid": "37d2b05b-9d96-4488-9814-02de46b19243"
+        }
+    ],
+    "layout": {
+        "jsVersion": "1.42.2",
+        "payloadVersion": "1.0",
+        "pyVersion": "3.4.0",
+        "template": {
+            "data": {
+                "table": [
+                    {
+                        "cells": {
+                            "align": "left",
+                            "fill": {
+                                "color": "#fff"
+                            },
+                            "font": {
+                                "color": [
+                                    "#2D3138"
+                                ],
+                                "size": 12
+                            },
+                            "height": 30,
+                            "line": {
+                                "color": "#DDDFE1",
+                                "width": 0.5
+                            }
+                        },
+                        "header": {
+                            "align": "left",
+                            "fill": {
+                                "color": "#f1f1f1"
+                            },
+                            "font": {
+                                "color": "#2D3138",
+                                "size": 14
+                            },
+                            "line": {
+                                "color": "#DDDFE1",
+                                "width": 1
+                            }
+                        }
+                    }
+                ]
+            },
+            "layout": {
+                "colorway": [
+                    "#1aaeba",
+                    "#f5b225",
+                    "#3E9651",
+                    "#6B4C9A",
+                    "#535154",
+                    "#948B3D"
+                ],
+                "font": {
+                    "family": "Open Sans"
+                },
+                "height": 450,
+                "margin": {
+                    "autoexpand": true,
+                    "b": 50,
+                    "t": 60
+                },
+                "title": {
+                    "font": {
+                        "color": "#2D3138",
+                        "family": "Open Sans",
+                        "size": 18
+                    }
+                },
+                "updatemenudefaults": {
+                    "active": 0,
+                    "pad": {
+                        "r": 10,
+                        "t": 15
+                    },
+                    "showactive": true,
+                    "x": 1,
+                    "xanchor": "left",
+                    "y": 1.2,
+                    "yanchor": "top"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "showline": true,
+                    "zeroline": false
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "showline": true,
+                    "zeroline": false
+                }
+            }
+        },
+        "title": "Accuracy Matrix",
+	"updatemenus": [{"buttons": [{"args": [], "label": "Incorrect Balance", "method": "restyle"}, {"args": [], "label": "Late Pmt Charged", "method": "restyle"}, {"args": [], "label": "Payment Not Reflecting", "method": "restyle"}, {"args": [], "label": "Potential Account Takeover", "method": "restyle"}, {"args": [], "label": "Wrong Bureau Record", "method": "restyle"}], "direction": "down", "showactive": true, "xanchor": "right", "yanchor": "top", "x": 1, "y": 1.3}]
+    }
+}

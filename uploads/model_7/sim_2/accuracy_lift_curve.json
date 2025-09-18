@@ -1,0 +1,152 @@
+{
+    "data": [
+        {
+            "type": "bar",
+            "uid": "9014b5f3-d06a-474a-8020-3ea992423e59",
+            "x": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+            ],
+            "y": [
+                3.0188679245283017,
+                2.2641509433962264,
+                2.6415094339622645,
+                2.452830188679245,
+                2.2641509433962264,
+                2.0125786163522013,
+                1.940700808625337,
+                1.8396226415094337,
+                1.719077568134172,
+                1.6226415094339623,
+                1.5437392795883362,
+                1.4465408805031448,
+                1.3642960812772134,
+                1.3207547169811322,
+                1.2830188679245282,
+                1.2028301886792452,
+                1.1542730299667037,
+                1.090146750524109,
+                1.0327706057596824,
+                1.0
+            ]
+        }
+    ],
+    "layout": {
+        "jsVersion": "1.42.2",
+        "payloadVersion": "1.0",
+        "pyVersion": "3.4.0",
+        "template": {
+            "data": {
+                "table": [
+                    {
+                        "cells": {
+                            "align": "left",
+                            "fill": {
+                                "color": "#fff"
+                            },
+                            "font": {
+                                "color": [
+                                    "#2D3138"
+                                ],
+                                "size": 12
+                            },
+                            "height": 30,
+                            "line": {
+                                "color": "#DDDFE1",
+                                "width": 0.5
+                            }
+                        },
+                        "header": {
+                            "align": "left",
+                            "fill": {
+                                "color": "#f1f1f1"
+                            },
+                            "font": {
+                                "color": "#2D3138",
+                                "size": 14
+                            },
+                            "line": {
+                                "color": "#DDDFE1",
+                                "width": 1
+                            }
+                        }
+                    }
+                ]
+            },
+            "layout": {
+                "colorway": [
+                    "#1aaeba",
+                    "#f5b225",
+                    "#3E9651",
+                    "#6B4C9A",
+                    "#535154",
+                    "#948B3D"
+                ],
+                "font": {
+                    "family": "Open Sans"
+                },
+                "height": 450,
+                "margin": {
+                    "autoexpand": true,
+                    "b": 50,
+                    "t": 60
+                },
+                "title": {
+                    "font": {
+                        "color": "#2D3138",
+                        "family": "Open Sans",
+                        "size": 18
+                    }
+                },
+                "updatemenudefaults": {
+                    "active": 0,
+                    "pad": {
+                        "r": 10,
+                        "t": 15
+                    },
+                    "showactive": true,
+                    "x": 1,
+                    "xanchor": "left",
+                    "y": 1.2,
+                    "yanchor": "top"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "showline": true,
+                    "zeroline": false
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "showline": true,
+                    "zeroline": false
+                }
+            }
+        },
+        "title": "Lift Curve",
+        "xaxis": {
+            "title": "Quantile bins"
+        },
+        "yaxis": {
+            "title": "Lift"
+        },
+	"updatemenus": [{"buttons": [{"args": [], "label": "Incorrect Balance", "method": "restyle"}, {"args": [], "label": "Late Pmt Charged", "method": "restyle"}, {"args": [], "label": "Payment Not Reflecting", "method": "restyle"}, {"args": [], "label": "Potential Account Takeover", "method": "restyle"}, {"args": [], "label": "Wrong Bureau Record", "method": "restyle"}], "direction": "down", "showactive": true, "xanchor": "right", "yanchor": "top", "x": 1, "y": 1.3}]
+    }
+}

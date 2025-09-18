@@ -1,0 +1,24 @@
+{
+  "name": "file_server_mcp",
+  "version": "1.0.0",
+  "description": "MCP for File Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @modelcontextprotocol/server-filesystem ./uploads"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajneesh407/file_server_mcp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajneesh407/file_server_mcp/issues"
+  },
+  "homepage": "https://github.com/rajneesh407/file_server_mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/server-filesystem": "^2025.8.21"
+  }
+}

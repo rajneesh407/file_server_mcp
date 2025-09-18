@@ -1,0 +1,5 @@
+[2025-09-04 10:54:00 UTC] Preparing Evaluation #1
+[2025-09-04 10:54:02 UTC] Evaluation #1 returned a column "index" - but is not used.
+[2025-09-04 10:54:11 UTC] Evaluation #1 preparation completed - 10 record(s) found
+[2025-09-04 10:54:11 UTC] Preparing input data for execution
+[2025-09-04 10:54:15 UTC] Final number of records that will be used for execution (from all data sources): 10 record(s)

@@ -1,0 +1,93 @@
+[2025-09-04 10:48:24 UTC] Preparing Evaluation #1
+[2025-09-04 10:48:35 UTC] ---------------------------------------------------------------------------
+[2025-09-04 10:48:35 UTC] KeyError                                  Traceback (most recent call last):
+[2025-09-04 10:48:35 UTC]  Data Source "Evaluation #1", line 11, in <definition>
+[2025-09-04 10:48:35 UTC]          2 | df = financial_terms_with_definitions.toPandas()
+[2025-09-04 10:48:35 UTC]          4 | GENERATION_PROMPT = """
+[2025-09-04 10:48:35 UTC]          5 | Provide the financial definition ((category: {category})) of the term between <START TERM> and <END TERM>. 
+[2025-09-04 10:48:35 UTC]          6 | Return only the definition, without any extra text.
+[2025-09-04 10:48:35 UTC]          7 | <START TERM>{term}<END TERM>
+[2025-09-04 10:48:35 UTC]          8 | """
+[2025-09-04 10:48:35 UTC]         10 | df["temperature"] = 0
+[2025-09-04 10:48:35 UTC] ---->   11 | df["text"] = df.apply(lambda x: GENERATION_PROMPT.format(term=x["term"], category=x["category"]), axis=1)
+[2025-09-04 10:48:35 UTC]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]         13 | # Initialize Spark session and convert to Spark DataFrame
+[2025-09-04 10:48:35 UTC]     Local variables:
+[2025-09-04 10:48:35 UTC]       financial_terms_with_definitions = DataFrame[index: string...ing, definition: string]
+[2025-09-04 10:48:35 UTC]       df            = pandas.DataFrame[index: object, term: object, context: object, definition: object, temperature: int64]
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 9568, in DataFrame.apply
+[2025-09-04 10:48:35 UTC]       9420 | """
+[2025-09-04 10:48:35 UTC]       9421 | Apply a function along an axis of the DataFrame.
+[2025-09-04 10:48:35 UTC]       9422 | 
+[2025-09-04 10:48:35 UTC] (...)
+[2025-09-04 10:48:35 UTC]       9555 | 2  1  2
+[2025-09-04 10:48:35 UTC]       9556 | """
+[2025-09-04 10:48:35 UTC]       9557 | from pandas.core.apply import frame_apply
+[2025-09-04 10:48:35 UTC]       9559 | op = frame_apply(
+[2025-09-04 10:48:35 UTC]       9560 |     self,
+[2025-09-04 10:48:35 UTC]       9561 |     func=func,
+[2025-09-04 10:48:35 UTC] (...)
+[2025-09-04 10:48:35 UTC]       9566 |     kwargs=kwargs,
+[2025-09-04 10:48:35 UTC]       9567 | )
+[2025-09-04 10:48:35 UTC] ----> 9568 | return op.apply().__finalize__(self, method="apply")
+[2025-09-04 10:48:35 UTC]                     ^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/apply.py", line 764, in FrameApply.apply
+[2025-09-04 10:48:35 UTC]        760 | # raw
+[2025-09-04 10:48:35 UTC]        761 | elif self.raw:
+[2025-09-04 10:48:35 UTC]        762 |     return self.apply_raw()
+[2025-09-04 10:48:35 UTC] ---->  764 | return self.apply_standard()
+[2025-09-04 10:48:35 UTC]                     ^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/apply.py", line 891, in FrameApply.apply_standard
+[2025-09-04 10:48:35 UTC]        890 | def apply_standard(self):
+[2025-09-04 10:48:35 UTC] ---->  891 |     results, res_index = self.apply_series_generator()
+[2025-09-04 10:48:35 UTC]                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]        893 |     # wrap results
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/apply.py", line 907, in FrameApply.apply_series_generator
+[2025-09-04 10:48:35 UTC]        902 | results = {}
+[2025-09-04 10:48:35 UTC]        904 | with option_context("mode.chained_assignment", None):
+[2025-09-04 10:48:35 UTC]        905 |     for i, v in enumerate(series_gen):
+[2025-09-04 10:48:35 UTC]        906 |         # ignore SettingWithCopy here in case the user mutates
+[2025-09-04 10:48:35 UTC] ---->  907 |         results[i] = self.f(v)
+[2025-09-04 10:48:35 UTC]                                   ^^^^^^^^^
+[2025-09-04 10:48:35 UTC]        908 |         if isinstance(results[i], ABCSeries):
+[2025-09-04 10:48:35 UTC]        909 |             # If we have a view on v, we need to make a copy because
+[2025-09-04 10:48:35 UTC]        910 |             #  series_generator will swap out the underlying data
+[2025-09-04 10:48:35 UTC]  Data Source "Evaluation #1", line 11, in <lambda>
+[2025-09-04 10:48:35 UTC]          2 | df = financial_terms_with_definitions.toPandas()
+[2025-09-04 10:48:35 UTC]          4 | GENERATION_PROMPT = """
+[2025-09-04 10:48:35 UTC]          5 | Provide the financial definition ((category: {category})) of the term between <START TERM> and <END TERM>. 
+[2025-09-04 10:48:35 UTC]          6 | Return only the definition, without any extra text.
+[2025-09-04 10:48:35 UTC]          7 | <START TERM>{term}<END TERM>
+[2025-09-04 10:48:35 UTC]          8 | """
+[2025-09-04 10:48:35 UTC]         10 | df["temperature"] = 0
+[2025-09-04 10:48:35 UTC] ---->   11 | df["text"] = df.apply(lambda x: GENERATION_PROMPT.format(term=x["term"], category=x["category"]), axis=1)
+[2025-09-04 10:48:35 UTC]                                                                                                ^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]         13 | # Initialize Spark session and convert to Spark DataFrame
+[2025-09-04 10:48:35 UTC]     Local variables:
+[2025-09-04 10:48:35 UTC]       x             = index                  ...0
+[2025-09-04 10:48:35 UTC]                       Name: 0, dtype: object
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/series.py", line 981, in Series.__getitem__
+[2025-09-04 10:48:35 UTC]        977 | if is_integer(key) and self.index._should_fallback_to_positional:
+[2025-09-04 10:48:35 UTC]        978 |     return self._values[key]
+[2025-09-04 10:48:35 UTC]        980 | elif key_is_scalar:
+[2025-09-04 10:48:35 UTC] ---->  981 |     return self._get_value(key)
+[2025-09-04 10:48:35 UTC]                         ^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]        983 | if is_hashable(key):
+[2025-09-04 10:48:35 UTC]        984 |     # Otherwise index.get_value will raise InvalidIndexError
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/series.py", line 1089, in Series._get_value
+[2025-09-04 10:48:35 UTC]       1085 | if takeable:
+[2025-09-04 10:48:35 UTC]       1086 |     return self._values[label]
+[2025-09-04 10:48:35 UTC]       1088 | # Similar to Index.get_value, but we do not fall back to positional
+[2025-09-04 10:48:35 UTC] ----> 1089 | loc = self.index.get_loc(label)
+[2025-09-04 10:48:35 UTC]                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:48:35 UTC]       1090 | return self.index._get_values_for_loc(self, loc, label)
+[2025-09-04 10:48:35 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+[2025-09-04 10:48:35 UTC]       3801 | try:
+[2025-09-04 10:48:35 UTC]       3802 |     return self._engine.get_loc(casted_key)
+[2025-09-04 10:48:35 UTC]       3803 | except KeyError as err:
+[2025-09-04 10:48:35 UTC] ----> 3804 |     raise KeyError(key) from err
+[2025-09-04 10:48:35 UTC]       3805 | except TypeError:
+[2025-09-04 10:48:35 UTC]       3806 |     # If we have a listlike key, _check_indexing_error will raise
+[2025-09-04 10:48:35 UTC]       3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+[2025-09-04 10:48:35 UTC]       3808 |     #  the TypeError.
+[2025-09-04 10:48:35 UTC] KeyError: 'category'

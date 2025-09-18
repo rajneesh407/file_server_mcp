@@ -1,0 +1,77 @@
+Device set to use cpu
+[2025-07-08 10:17:11 UTC] Processed all records
+[2025-07-08 10:17:11 UTC] ********** ERRORS **********
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...940395355225}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...940395355225}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...736547470093}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...736547470093}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 9 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...998807907104}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...998807907104}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...204231262207}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...204231262207}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...531507492065}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...531507492065}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...614886283875}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...614886283875}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...979734420776}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...979734420776}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...994039535522}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...994039535522}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...604690551758}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...604690551758}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...382495880127}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...382495880127}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...506768226624}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'S...506768226624}"]
+[2025-07-08 10:17:11 UTC] [ERROR] 1 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...991655349731}"]
+[2025-07-08 10:17:11 UTC] ---------------------------------------------------------------------------
+[2025-07-08 10:17:11 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 10:17:11 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model__v1__id24
+[2025-07-08 10:17:11 UTC]  - Should be a valid number [input_value="{'label': 'I...991655349731}"]
+[2025-07-08 10:17:11 UTC] Execution completed - 0 records ran successfully and 20 records had errors
+[2025-07-08 10:17:11 UTC] Got 0 records after execution. Unable to find any data to run reports on.

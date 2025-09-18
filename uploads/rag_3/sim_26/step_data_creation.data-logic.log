@@ -1,0 +1,34 @@
+[2025-09-03 00:49:00 UTC] Preparing Evaluation #1
+[2025-09-03 00:49:06 UTC] ---------------------------------------------------------------------------
+[2025-09-03 00:49:06 UTC] KeyError                                  Traceback (most recent call last):
+[2025-09-03 00:49:06 UTC]  Data Source "Evaluation #1", line 29, in <definition>
+[2025-09-03 00:49:06 UTC]         25 | # Initialize Spark session and convert to Spark DataFrame
+[2025-09-03 00:49:06 UTC]         26 | from pyspark.sql import SparkSession
+[2025-09-03 00:49:06 UTC]         28 | spark = SparkSession.builder.getOrCreate()
+[2025-09-03 00:49:06 UTC] ---->   29 | return spark.createDataFrame(validation_sample[['db_call_needed', 'intent', 'sql_query_label', 'question', 'customer_id']])
+[2025-09-03 00:49:06 UTC]                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:49:06 UTC]     Local variables:
+[2025-09-03 00:49:06 UTC]       existing_customer_card_related_response_accuracy_data = DataFrame[index: string...ql_query_sqlite: string]
+[2025-09-03 00:49:06 UTC]       df            = pandas.DataFrame[index: object, intent: object, sub_intent: object, question: object, require_facts: object, ground_truth_facts: object, baseline_message: object, baseline_message_with_details: object, customer_id: object, filter_type: object, sub_filter_type: object, filter_value: object, sql_query: object, length: object, grammar_error: object, urgent: object, polite: object, sql_query_label: object, db_call_needed: int64]
+[2025-09-03 00:49:06 UTC]       validation_sample = pandas.DataFrame[index: object, intent: object, sub_intent: object, user_message: object, require_facts: object, ground_truth_facts: object, baseline_message: object, baseline_message_with_details: object, customer_id: object, filter_type: object, sub_filter_type: object, filter_value: object, sql_query: object, length: object, grammar_error: object, urgent: object, polite: object, sql_query_sqlite: object, db_call_needed: int64]
+[2025-09-03 00:49:06 UTC]       spark         = <pyspark.sql.session.Sp...bject at 0x7df35cbaecd0>
+[2025-09-03 00:49:06 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3813, in DataFrame.__getitem__
+[2025-09-03 00:49:06 UTC]       3810 | else:
+[2025-09-03 00:49:06 UTC]       3811 |     if is_iterator(key):
+[2025-09-03 00:49:06 UTC]       3812 |         key = list(key)
+[2025-09-03 00:49:06 UTC] ----> 3813 |     indexer = self.columns._get_indexer_strict(key, "columns")[1]
+[2025-09-03 00:49:06 UTC]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:49:06 UTC]       3815 | # take() does not accept boolean indexers
+[2025-09-03 00:49:06 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6070, in Index._get_indexer_strict
+[2025-09-03 00:49:06 UTC]       6066 |     keyarr = self.reindex(keyarr)[0]
+[2025-09-03 00:49:06 UTC]       6067 | else:
+[2025-09-03 00:49:06 UTC]       6068 |     keyarr, indexer, new_indexer = self._reindex_non_unique(keyarr)
+[2025-09-03 00:49:06 UTC] ----> 6070 | self._raise_if_missing(keyarr, indexer, axis_name)
+[2025-09-03 00:49:06 UTC]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:49:06 UTC]       6072 | keyarr = self.take(indexer)
+[2025-09-03 00:49:06 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6133, in Index._raise_if_missing
+[2025-09-03 00:49:06 UTC]       6129 |         key = list(key)
+[2025-09-03 00:49:06 UTC]       6130 |     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+[2025-09-03 00:49:06 UTC]       6132 | not_found = list(ensure_index(key)[missing_mask.nonzero()[0]].unique())
+[2025-09-03 00:49:06 UTC] ----> 6133 | raise KeyError(f"{not_found} not in index")
+[2025-09-03 00:49:06 UTC] KeyError: "['sql_query_label', 'question'] not in index"

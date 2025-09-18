@@ -1,0 +1,10 @@
+[2025-07-08 11:32:00 UTC] Processed all records
+[2025-07-08 11:32:00 UTC] ********** ERRORS **********
+[2025-07-08 11:32:00 UTC] [ERROR] 10 record(s) failed with ValueError: 1 validation error(s) in return value of prompt_injection_detection_model_llm_as_judge__v1__id25
+[2025-07-08 11:32:00 UTC]  - Should be a valid number [input_value={'reason': None, 'safe': None}]
+[2025-07-08 11:32:00 UTC] ---------------------------------------------------------------------------
+[2025-07-08 11:32:00 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 11:32:00 UTC] ValueError: 1 validation error(s) in return value of prompt_injection_detection_model_llm_as_judge__v1__id25
+[2025-07-08 11:32:00 UTC]  - Should be a valid number [input_value={'reason': None, 'safe': None}]
+[2025-07-08 11:32:01 UTC] Execution completed - 0 records ran successfully and 10 records had errors
+[2025-07-08 11:32:01 UTC] Got 0 records after execution. Unable to find any data to run reports on.

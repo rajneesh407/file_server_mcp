@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report "Prompt Quality Evaluation" <v1>, line 109, in <definition>
+       104 |     return overall_readiness, metrics_df, tags_df
+       107 | test_prompt = data["current"].toPandas()["output"].iloc[0]
+       108 | test_goal = job.current.description
+---->  109 | overall_readiness, metrics_df, tags_df = evaluate(test_prompt, test_goal)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       110 | return {"overall_readiness": overall_readiness, "metrics_df": metrics_df, "tags_df": tags_df}
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 08:19 PM">
+      data          = {'current': <spark df>}
+      test_prompt   = '# PERSONA & TONE\nYou ...story: []\n            '
+      test_goal     = 'This is a comprehensiv...ion and audit purposes.'
+ Report "Prompt Quality Evaluation" <v1>, line 80, in evaluate
+        77 |     metric_scores_and_reasoning[metric][model]["score"] = response["score"]
+        78 |     metric_scores_and_reasoning[metric][model]["explanation"] = response["reason"]
+        79 |     metric_scores_and_reasoning[metric][model]["tags"] = response["tags"]
+---->   80 |     metric_scores_and_reasoning[metric][model]["response"] = response["human reason"]
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        82 | rows = []
+    Local variables:
+      prompt        = '# PERSONA & TONE\nYou ...story: []\n            '
+      goal          = 'This is a comprehensiv...ion and audit purposes.'
+      metric_scores_and_reasoning = {'Grammatical Correctness': {'Reviewer-1': {'explanation': '', 'score': None, 'tags': []}}}
+      metric        = 'Grammatical Correctness'
+      current_metric = 'ou are an expert evalu... any)"]\n}}<END FORMAT>'
+      model         = 'Reviewer-1'
+      response      = {'reason': '', 'score': None, 'tags': []}
+KeyError: 'human reason'
+Logs:
+[2025-09-04 14:52:31 UTC] Error occured while running Report "Prompt Quality Evaluation" definition

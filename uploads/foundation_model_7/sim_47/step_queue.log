@@ -1,0 +1,5 @@
+[2025-09-04 11:46:08 UTC] NOTE: This job has a time limit of 20 hours.
+[2025-09-04 11:46:08 UTC] If the job takes longer than 20 hours, it will be terminated.
+[2025-09-04 11:46:08 UTC] Please contact your system administrator to run jobs which are expected to take longer.
+[2025-09-04 11:46:08 UTC] Starting Spark Session
+[2025-09-04 11:46:09 UTC] Spark Session created with applicationId: local-1756986369168

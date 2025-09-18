@@ -1,0 +1,6 @@
+[2025-08-25 11:03:32 UTC] Preparing Evaluation #1
+[2025-08-25 11:03:44 UTC] Evaluation #1 returned a column "sub_intent" - but is not used.
+[2025-08-25 11:03:44 UTC] Evaluation #1 returned a column "facts" - but is not used.
+[2025-08-25 11:03:53 UTC] Evaluation #1 preparation completed - 1100 record(s) found
+[2025-08-25 11:03:53 UTC] Preparing input data for execution
+[2025-08-25 11:03:58 UTC] Final number of records that will be used for execution (from all data sources): 1100 record(s)

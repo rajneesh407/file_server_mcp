@@ -1,0 +1,31 @@
+Error occured while generating Report Output "Quality Tags"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last):
+ Report Output "Quality Tags" <v1>, line 147, in <definition>
+       123 |     initial_chart_title = f"{chart_base_title}<br><br>{initial_issues_summary}"
+       125 |     fig.update_layout(
+       126 |         xaxis_title="<b>Assessment Categories</b>",
+       127 |         yaxis_title="",
+(...)
+       141 |         paper_bgcolor="rgba(0,0,0,0)",
+       142 |     )
+       144 |     return fig
+---->  147 | return generate_tags_comparison_chart(raw_output)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Jun-20-2025 02:25 PM">
+      raw_output    = {'Customer Intent Classification Prompt': {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}}
+ Report Output "Quality Tags" <v1>, line 10, in generate_tags_comparison_chart
+         7 |     raise ValueError("Input data_dict cannot be empty.")
+         8 | all_data_frames = []
+         9 | for prompt_name, df in data_dict.items():
+---->   10 |     df_chart = df.copy(deep=True)
+                            ^^^^^^^^^^^^^^^^^^
+        11 |     df_chart["Prompt"] = prompt_name
+    Local variables:
+      data_dict     = {'Customer Intent Classification Prompt': {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}}
+      title         = None
+      all_data_frames = []
+      prompt_name   = 'Customer Intent Classification Prompt'
+      df            = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+TypeError: dict.copy() takes no keyword arguments

@@ -1,0 +1,21 @@
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Additional Figure "Score Distribution" <v1>, line 22, in <definition>
+         6 |     df_copy["llm_answer_relevancy"] = pd.Categorical(
+         7 |         df_copy["llm_answer_relevancy"], categories=all_possible_scores, ordered=True
+         8 |     )
+        10 |     summary_table = pd.crosstab(
+        11 |         index=df_copy["intent"],
+        12 |         columns=df_copy["llm_answer_relevancy"],
+(...)
+        17 |         margins_name="Total",
+        18 |     )
+        20 |     return summary_table
+---->   22 | df = raw_output[job.current.name]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        24 | ALL_SCORES = ["1", "2", "3", "4", "5", "CANNOT DETERMINE"]
+    Local variables:
+      job           = <Job job_type="Simulati..."Example Dashboard Run">
+      raw_output    = {'CorridorPlatforms Bot': pandas.DataFrame[output: object, intent: object, length: object, ground_truth: object, group_id: object, grammar_error: object, urgent: object, polite: object, category: object, query_category: object, scenario: object, evaluation: object, user_message: object, history: object, context: object, response: object, context_logs: object, db_output: object, cosine_similarity: float64, temp_llm_fact: object, fact_check_status: object, fact_check_reason: object, fact_check_logs: object, temp_llm_similarity: object, llm_answer_relevancy: object, llm_answer_relevancy_reason: object]}
+KeyError: 'CorridorPlatforms Website Bot'

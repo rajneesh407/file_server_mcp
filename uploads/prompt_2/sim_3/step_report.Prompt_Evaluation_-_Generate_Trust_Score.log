@@ -1,0 +1,33 @@
+[2025-06-20 08:56:27 UTC] Report execution completed. Generating outputs...
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] Error occured while generating Report Output "Quality Tags"
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] ---------------------------------------------------------------------------
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] TypeError                                 Traceback (most recent call last):
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]  Report Output "Quality Tags" <v1>, line 147, in <definition>
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        123 |     initial_chart_title = f"{chart_base_title}<br><br>{initial_issues_summary}"
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        125 |     fig.update_layout(
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        126 |         xaxis_title="<b>Assessment Categories</b>",
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        127 |         yaxis_title="",
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] (...)
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        141 |         paper_bgcolor="rgba(0,0,0,0)",
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        142 |     )
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]        144 |     return fig
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] ---->  147 | return generate_tags_comparison_chart(raw_output)
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]     Local variables:
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       job           = <Job job_type="Simulati...: Jun-20-2025 02:25 PM">
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       raw_output    = {'Customer Intent Classification Prompt': {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}}
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]  Report Output "Quality Tags" <v1>, line 10, in generate_tags_comparison_chart
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]          7 |     raise ValueError("Input data_dict cannot be empty.")
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]          8 | all_data_frames = []
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]          9 | for prompt_name, df in data_dict.items():
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] ---->   10 |     df_chart = df.copy(deep=True)
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]                             ^^^^^^^^^^^^^^^^^^
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]         11 |     df_chart["Prompt"] = prompt_name
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]     Local variables:
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       data_dict     = {'Customer Intent Classification Prompt': {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}}
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       title         = None
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       all_data_frames = []
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       prompt_name   = 'Customer Intent Classification Prompt'
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC]       df            = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...my new credit card.\')"', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+[2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] [2025-06-20 08:56:27 UTC] TypeError: dict.copy() takes no keyword arguments
+[2025-06-20 08:56:27 UTC] All 5 outputs processed.

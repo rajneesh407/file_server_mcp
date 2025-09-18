@@ -1,0 +1,35 @@
+[2025-08-20 07:33:12 UTC] Processed all records
+[2025-08-20 07:33:12 UTC] ********** ERRORS **********
+[2025-08-20 07:33:12 UTC] [ERROR] 1 record(s) failed with TypeError: main.<locals>.wrapper_gemini_2_5_flash__v1__id7() got an unexpected keyword argument 'system_instruction'
+[2025-08-20 07:33:12 UTC] ---------------------------------------------------------------------------
+[2025-08-20 07:33:12 UTC] TypeError                                 Traceback (most recent call last):
+[2025-08-20 07:33:12 UTC]  FoundationModel "Answer Relevancy (Credit Card Pipeline) LLM as a Judge" <v1>, line 8, in <definition>
+[2025-08-20 07:33:12 UTC]          1 |     user_message = f"""### **Current Task**
+[2025-08-20 07:33:12 UTC]          2 |     Given:
+[2025-08-20 07:33:12 UTC]          3 |     - user_question: {user_question}
+[2025-08-20 07:33:12 UTC]          4 |     - llm_response: {llm_response}
+[2025-08-20 07:33:12 UTC]          5 | 
+[2025-08-20 07:33:12 UTC]          6 |     Return only the JSON result in plain text and nothing else"""
+[2025-08-20 07:33:12 UTC] ---->    8 |     response = gemini_2_5_flash(
+[2025-08-20 07:33:12 UTC]                             ^^^^^^^^^^^^^^^^^
+[2025-08-20 07:33:12 UTC]          9 |         user_message.format(user_question=user_question, llm_response=llm_response),
+[2025-08-20 07:33:12 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-20 07:33:12 UTC]         10 |         temperature=0,
+[2025-08-20 07:33:12 UTC]                  ^^^^^^^^^^^^^^^^^^
+[2025-08-20 07:33:12 UTC]         11 |         system_instruction=cc_response_accuracy_prompt(additional_instructions=additional_instructions),
+[2025-08-20 07:33:12 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-20 07:33:12 UTC]         12 |     )["response"]
+[2025-08-20 07:33:12 UTC]                  ^
+[2025-08-20 07:33:12 UTC]         14 |     return {
+[2025-08-20 07:33:12 UTC]         15 |         "score": extract_response_to_customer(response, "score"),
+[2025-08-20 07:33:12 UTC]         16 |         "justification": extract_response_to_customer(response, "justification"),
+[2025-08-20 07:33:12 UTC]         17 |     }
+[2025-08-20 07:33:12 UTC]     Local variables:
+[2025-08-20 07:33:12 UTC]       user_question = 'hello, how the hell you are saying that?'
+[2025-08-20 07:33:12 UTC]       llm_response  = 'I will do that, its my right!'
+[2025-08-20 07:33:12 UTC]       additional_instructions = 'None'
+[2025-08-20 07:33:12 UTC]       cache         = Cache({}, maxsize=1024, currsize=0)
+[2025-08-20 07:33:12 UTC]       user_message  = '### **Current Task**\n...n text and nothing else'
+[2025-08-20 07:33:12 UTC] TypeError: main.<locals>.wrapper_gemini_2_5_flash__v1__id7() got an unexpected keyword argument 'system_instruction'
+[2025-08-20 07:33:13 UTC] Execution completed - 0 records ran successfully and 1 records had errors
+[2025-08-20 07:33:13 UTC] Got 0 records after execution. Unable to find any data to run reports on.

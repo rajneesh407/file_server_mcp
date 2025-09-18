@@ -1,0 +1,1 @@
+{"columns":["Intent","Exact match","Contains correct cards","Incorrect match","No database call"],"index":[0,1,2,3,4],"data":[["ACTIVATE CARD",1,0,148,2],["BLOCK CARD",2,0,169,0],["CARD DETAILS",3,0,200,4],["CHECK CARD ANNUAL FEE",1,0,82,0],["CHECK CURRENT BALANCE ON CARD",1,0,85,48]]}

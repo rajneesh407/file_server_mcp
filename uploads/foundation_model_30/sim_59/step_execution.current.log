@@ -1,0 +1,19 @@
+[2025-09-06 11:34:40 UTC] Starting Spark Job with 1 partition(s).
+[2025-09-06 11:34:45 UTC] Spark created 3 task(s): 2 ACTIVE, 1 COMPLETED, 0 FAILED tasks
+[2025-09-06 11:34:46 UTC] Traceback (most recent call last):
+[2025-09-06 11:34:46 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 961, in set_canvas_step
+[2025-09-06 11:34:46 UTC]     yield logfile
+[2025-09-06 11:34:46 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 1056, in run_canvas
+[2025-09-06 11:34:46 UTC]     taskdata_item = exec_canvas(taskdata_item)
+[2025-09-06 11:34:46 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-06 11:34:46 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/canvas.py", line 14, in __call__
+[2025-09-06 11:34:46 UTC]     out = item(*args, **kwargs)
+[2025-09-06 11:34:46 UTC]           ^^^^^^^^^^^^^^^^^^^^^
+[2025-09-06 11:34:46 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/artifact_execution_task.py", line 195, in run_artifact_task
+[2025-09-06 11:34:46 UTC]     shutil.copytree(save_location, backup_location)
+[2025-09-06 11:34:46 UTC]   File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/shutil.py", line 573, in copytree
+[2025-09-06 11:34:46 UTC]     return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+[2025-09-06 11:34:46 UTC]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-06 11:34:46 UTC]   File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/shutil.py", line 527, in _copytree
+[2025-09-06 11:34:46 UTC]     raise Error(errors)
+[2025-09-06 11:34:46 UTC] shutil.Error: [(<DirEntry '_temporary'>, '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.backup/_temporary/0/_temporary', "[Errno 2] No such file or directory: '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.parquet/_temporary/0/_temporary'"), ('/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.parquet/_temporary/0/task_202509061134403648107230348354165_0015_m_000000', '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.backup/_temporary/0/task_202509061134403648107230348354165_0015_m_000000', "[Errno 2] No such file or directory: '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.parquet/_temporary/0/task_202509061134403648107230348354165_0015_m_000000'"), (<DirEntry '0'>, '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.backup/_temporary/0', "[Errno 2] No such file or directory: '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.parquet/_temporary/0'"), (<DirEntry '_temporary'>, '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.backup/_temporary', "[Errno 2] No such file or directory: '/opt/corridor/data/results/sim_SIM_FOUNDATION_MODEL_59_job_811_ent_30_final_data_raw.parquet/_temporary'")]

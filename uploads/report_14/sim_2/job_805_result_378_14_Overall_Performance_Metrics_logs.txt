@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last):
+ Report "Intent Recognition Accuracy Analysis" <v1>, line 9, in <definition>
+         6 | expected_cols = ["output", "user_message"]
+         7 | missing = [col for col in expected_cols if col not in df.columns]
+         8 | if missing:
+---->    9 |     raise AssertionError(
+        10 |         f"Expected column(s) {missing} to be present but not provided in the data. "
+        11 |         "Please provide the column(s) and rerun."
+        12 |     )
+        14 | # Extract predicted intent from the "output" column, convert to uppercase
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-06-2025 04:29 PM">
+      data          = {'current': <spark df>}
+      raw_output    = {}
+      expected_cols = ['output', 'user_message']
+      missing       = ['output']
+AssertionError: Expected column(s) ['output'] to be present but not provided in the data. Please provide the column(s) and rerun.
+Logs:
+[2025-09-06 11:00:42 UTC] Error occured while running Report "Intent Recognition Accuracy Analysis" definition

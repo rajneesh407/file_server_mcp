@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last):
+ Report "Financial Terms Understanding" <v1>, line 89, in <definition>
+        81 |         updated_data_dict = cls.process_data(data_dict, job)  # This step is corridor specific
+        82 |         return cls.run_computation(
+        83 |             updated_data_dict,
+        84 |             groupby_column=groupby_column,
+        85 |         )
+        88 | gc_col = "category"
+---->   89 | return VocabUnderstanding.run_computation_helper(data, job, gc_col)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-06-2025 05:31 PM">
+      data          = {'current': <spark df>}
+      gc_col        = 'category'
+ Report "Financial Terms Understanding" <v1>, line 82, in run_computation_helper
+        74 | @classmethod
+        75 | def run_computation_helper(
+        76 |     cls,
+(...)
+        79 |     groupby_column=None,
+        80 | ):
+        81 |     updated_data_dict = cls.process_data(data_dict, job)  # This step is corridor specific
+---->   82 |     return cls.run_computation(
+                        ^^^^^^^^^^^^^^^^^^^^
+        83 |         updated_data_dict,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+        84 |         groupby_column=groupby_column,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        85 |     )
+                 ^
+    Local variables:
+      data_dict     = {'current': <spark df>}
+      job           = <Job job_type="Simulati...: Sep-06-2025 05:31 PM">
+      groupby_column = 'category'
+      updated_data_dict = {'Financial Terms Understanding': pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, text: object, evaluation: object]}
+ Report "Financial Terms Understanding" <v1>, line 30, in run_computation
+        27 | expected_cols = ["output"]
+        28 | missing = [col for col in expected_cols if col not in model_data.columns]
+        29 | if missing:
+---->   30 |     raise AssertionError(
+        31 |         f"Expected column(s) {missing} to be present but not provided in the data. "
+        32 |         "Please provide the column(s) and rerun."
+        33 |     )
+        35 | model_data["output"] = model_data["output"].apply(lambda x: x["response"])
+    Local variables:
+      data_dict     = {'Financial Terms Understanding': pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, text: object, evaluation: object]}
+      groupby_column = 'category'
+      compute_metrics = ['cosine_similarity', 'llm_similarity']
+      output_dict   = {}
+      model_name    = 'Financial Terms Understanding'
+      expected_cols = ['output']
+      missing       = ['output']
+AssertionError: Expected column(s) ['output'] to be present but not provided in the data. Please provide the column(s) and rerun.
+Logs:
+[2025-09-06 12:02:55 UTC] Error occured while running Report "Financial Terms Understanding" definition

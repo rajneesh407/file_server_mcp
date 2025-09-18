@@ -1,0 +1,4 @@
+[2025-09-04 10:48:10 UTC] Creating execution plan for "Gemini 2.5 Flash" ("current")
+[2025-09-04 10:48:10 UTC] Creating execution plan for "Azure GPT 4.1" (Challenger: "Azure GPT 4.1")
+[2025-09-04 10:48:10 UTC] Planning execution for "Evaluation #1"
+[2025-09-04 10:48:12 UTC] Execution Plan created successfully

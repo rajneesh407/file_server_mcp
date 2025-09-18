@@ -1,0 +1,1 @@
+{"columns":["Metric","Gemini 2.5 Flash","Azure GPT 4.1","Gemini 2.5 Pro"],"index":[0,1,2],"data":[["cosine_similarity","3","1","2"],["llm_similarity","3","2","1"],["Average Ranking","3.0","1.5","1.5"]]}

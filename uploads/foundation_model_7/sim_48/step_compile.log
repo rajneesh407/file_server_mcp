@@ -1,0 +1,11 @@
+[2025-09-04 12:25:24 UTC] Creating execution plan for "Gemini 2.5 Flash" ("current")
+[2025-09-04 12:25:24 UTC] Creating execution plan for "Azure GPT 4.1" (Challenger: "Azure GPT 4.1")
+[2025-09-04 12:25:24 UTC] Creating execution plan for "Gemini 2.5 Pro" (Challenger: "Gemini 2.5 Pro")
+[2025-09-04 12:25:25 UTC] Error while creating execution plan for Job
+[2025-09-04 12:25:25 UTC] Traceback (most recent call last):
+[2025-09-04 12:25:25 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 786, in start_simulation
+[2025-09-04 12:25:25 UTC]     data_creation_signature, taskdata = data_creation_task.get_task_with_data_logic_output(
+[2025-09-04 12:25:25 UTC]                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:25:25 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/data_creation_task.py", line 64, in get_task_with_data_logic_output
+[2025-09-04 12:25:25 UTC]     raise AssertionError(
+[2025-09-04 12:25:25 UTC] AssertionError: Found different Default Value for argument system_instruction. Need to provide it explicitly

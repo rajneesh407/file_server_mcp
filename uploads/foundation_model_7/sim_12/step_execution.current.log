@@ -1,0 +1,31 @@
+[2025-07-02 09:29:12 UTC] Starting Spark Job with 1 partition(s).
+[2025-07-02 09:29:17 UTC] Spark created 5 task(s): 0 ACTIVE, 5 COMPLETED, 0 FAILED tasks
+[2025-07-02 09:29:18 UTC] Processed all records
+[2025-07-02 09:29:18 UTC] ********** ERRORS **********
+[2025-07-02 09:29:18 UTC] [ERROR] 1 record(s) failed with KeyError: 'GOOGLE_API_TOKEN'
+[2025-07-02 09:29:18 UTC] ---------------------------------------------------------------------------
+[2025-07-02 09:29:18 UTC] KeyError                                  Traceback (most recent call last):
+[2025-07-02 09:29:18 UTC]  FoundationModel "Gemini 2.5 Flash" <v1>, line 15, in <definition>
+[2025-07-02 09:29:18 UTC]         12 | if "client" in cache:
+[2025-07-02 09:29:18 UTC]         13 |     client = cache["client"]
+[2025-07-02 09:29:18 UTC]         14 | else:
+[2025-07-02 09:29:18 UTC] ---->   15 |     client = init()
+[2025-07-02 09:29:18 UTC]                           ^^^^^^
+[2025-07-02 09:29:18 UTC]         16 |     cache["client"] = client
+[2025-07-02 09:29:18 UTC]     Local variables:
+[2025-07-02 09:29:18 UTC]       text          = 'Hello'
+[2025-07-02 09:29:18 UTC]       temperature   = 1.0
+[2025-07-02 09:29:18 UTC]       cache         = Cache({}, maxsize=1024, currsize=0)
+[2025-07-02 09:29:18 UTC]  FoundationModel "Gemini 2.5 Flash" <v1>, line 8, in init
+[2025-07-02 09:29:18 UTC]          6 | def init():
+[2025-07-02 09:29:18 UTC]          7 |     # return genai.Client(api_key="AIzaSyDgkWZDDfEjWKMUpJ0R5yV8z7yvONLKN50")
+[2025-07-02 09:29:18 UTC] ---->    8 |     print("##############", os.environ["GOOGLE_API_TOKEN"])
+[2025-07-02 09:29:18 UTC]                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 09:29:18 UTC]          9 |     return genai.Client(api_key=os.getenv("GOOGLE_API_TOKEN"))
+[2025-07-02 09:29:18 UTC]  FoundationModel "Gemini 2.5 Flash" <v1>, line 428, in __getitem__
+[2025-07-02 09:29:18 UTC]     Local variables:
+[2025-07-02 09:29:18 UTC]       self          = environ({'PATH': '/usr/...LIFIED_TRACEBACK': '1'})
+[2025-07-02 09:29:18 UTC]       key           = 'GOOGLE_API_TOKEN'
+[2025-07-02 09:29:18 UTC] KeyError: 'GOOGLE_API_TOKEN'
+[2025-07-02 09:29:24 UTC] Execution completed - 0 records ran successfully and 1 records had errors
+[2025-07-02 09:29:25 UTC] Got 0 records after execution. Unable to find any data to run reports on.

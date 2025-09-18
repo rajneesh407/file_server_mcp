@@ -1,0 +1,33 @@
+[2025-09-03 00:55:47 UTC] Preparing Evaluation #1
+[2025-09-03 00:55:55 UTC] Traceback (most recent call last):
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 961, in set_canvas_step
+[2025-09-03 00:55:55 UTC]     yield logfile
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 1050, in run_canvas
+[2025-09-03 00:55:55 UTC]     taskdata = data_creation_canvas(taskdata)
+[2025-09-03 00:55:55 UTC]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/canvas.py", line 14, in __call__
+[2025-09-03 00:55:55 UTC]     out = item(*args, **kwargs)
+[2025-09-03 00:55:55 UTC]           ^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/execution_task.py", line 213, in run_artifact_task
+[2025-09-03 00:55:55 UTC]     retval = super().run_artifact_task(
+[2025-09-03 00:55:55 UTC]              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 144, in run_artifact_task
+[2025-09-03 00:55:55 UTC]     self.write_data(
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 67, in write_data
+[2025-09-03 00:55:55 UTC]     task_utils.write_data(data, data_info)
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/task_utils.py", line 626, in write_data
+[2025-09-03 00:55:55 UTC]     data.write.parquet(location, mode="error")
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/readwriter.py", line 1656, in parquet
+[2025-09-03 00:55:55 UTC]     self._jwrite.parquet(path)
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2025-09-03 00:55:55 UTC]     return_value = get_return_value(
+[2025-09-03 00:55:55 UTC]                    ^^^^^^^^^^^^^^^^^
+[2025-09-03 00:55:55 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/errors/exceptions/captured.py", line 175, in deco
+[2025-09-03 00:55:55 UTC]     raise converted from None
+[2025-09-03 00:55:55 UTC] pyspark.errors.exceptions.captured.PythonException: 
+[2025-09-03 00:55:55 UTC]   An exception was thrown from the Python worker. Please see the stack trace below.
+[2025-09-03 00:55:55 UTC] Traceback (most recent call last):
+[2025-09-03 00:55:55 UTC]   File "<tmpfile-3ef444d8-e3ac-47f4-9bae-f456ac7631f2>", line 282, in cast_value_func
+[2025-09-03 00:55:55 UTC]   File "<tmpfile-3ef444d8-e3ac-47f4-9bae-f456ac7631f2>", line 72, in cast_func
+[2025-09-03 00:55:55 UTC] ValueError: 1 validation error(s) in column 'db_call_needed'
+[2025-09-03 00:55:55 UTC]  - Should be a valid string [input_value=0]

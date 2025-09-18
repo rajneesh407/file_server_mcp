@@ -1,0 +1,36 @@
+[2025-09-04 10:54:41 UTC] Starting Spark Job with 1 partition(s).
+[2025-09-04 10:54:46 UTC] Spark created 5 task(s): 0 ACTIVE, 5 COMPLETED, 0 FAILED tasks
+[2025-09-04 10:54:46 UTC] Processed all records
+[2025-09-04 10:54:46 UTC] ********** ERRORS **********
+[2025-09-04 10:54:46 UTC] [ERROR] 10 record(s) failed with TypeError: 'function' object is not subscriptable
+[2025-09-04 10:54:46 UTC] ---------------------------------------------------------------------------
+[2025-09-04 10:54:46 UTC] TypeError                                 Traceback (most recent call last):
+[2025-09-04 10:54:46 UTC]  FoundationModel "Azure GPT 4.1" <v1>, line 13, in <definition>
+[2025-09-04 10:54:46 UTC]          3 |     from openai import AzureOpenAI
+[2025-09-04 10:54:46 UTC]          5 |     client = AzureOpenAI(
+[2025-09-04 10:54:46 UTC]          6 |         azure_endpoint=os.getenv["AZURE_ENDPOINT"],
+[2025-09-04 10:54:46 UTC]          7 |         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+[2025-09-04 10:54:46 UTC]          8 |         api_version="2024-12-01-preview",
+[2025-09-04 10:54:46 UTC]          9 |     )
+[2025-09-04 10:54:46 UTC]         10 |     return client
+[2025-09-04 10:54:46 UTC] ---->   13 | client = init()
+[2025-09-04 10:54:46 UTC]                       ^^^^^^
+[2025-09-04 10:54:46 UTC]         15 | chat_prompt = [{"role": "system", "content": [{"type": "text", "text": text}]}]
+[2025-09-04 10:54:46 UTC]     Local variables:
+[2025-09-04 10:54:46 UTC]       text          = '\n    Provide the fina...o (DTI)<END TERM>\n    '
+[2025-09-04 10:54:46 UTC]       temperature   = 0.0
+[2025-09-04 10:54:46 UTC]       cache         = LRUCache({}, maxsize=1024, currsize=0)
+[2025-09-04 10:54:46 UTC]  FoundationModel "Azure GPT 4.1" <v1>, line 6, in init
+[2025-09-04 10:54:46 UTC]          1 | def init():
+[2025-09-04 10:54:46 UTC]          2 |     import os
+[2025-09-04 10:54:46 UTC]          3 |     from openai import AzureOpenAI
+[2025-09-04 10:54:46 UTC]          5 |     client = AzureOpenAI(
+[2025-09-04 10:54:46 UTC] ---->    6 |         azure_endpoint=os.getenv["AZURE_ENDPOINT"],
+[2025-09-04 10:54:46 UTC]                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 10:54:46 UTC]          7 |         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+[2025-09-04 10:54:46 UTC]          8 |         api_version="2024-12-01-preview",
+[2025-09-04 10:54:46 UTC]          9 |     )
+[2025-09-04 10:54:46 UTC]         10 |     return client
+[2025-09-04 10:54:46 UTC] TypeError: 'function' object is not subscriptable
+[2025-09-04 10:54:53 UTC] Execution completed - 0 records ran successfully and 10 records had errors
+[2025-09-04 10:54:53 UTC] Got 0 records after execution. Unable to find any data to run reports on.

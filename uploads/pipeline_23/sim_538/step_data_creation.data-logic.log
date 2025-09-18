@@ -1,0 +1,5 @@
+[2025-07-20 16:15:23 UTC] Preparing Evaluation #1
+[2025-07-20 16:15:24 UTC] Evaluation #1 returned a column "filename" - but is not used.
+[2025-07-20 16:15:29 UTC] Evaluation #1 preparation completed - 100 record(s) found
+[2025-07-20 16:15:29 UTC] Preparing input data for execution
+[2025-07-20 16:15:33 UTC] Final number of records that will be used for execution (from all data sources): 100 record(s)

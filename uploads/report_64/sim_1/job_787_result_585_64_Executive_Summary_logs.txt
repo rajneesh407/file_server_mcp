@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report "Financial Terms Understanding" <v1>, line 81, in <definition>
+        73 |         updated_data_dict = cls.process_data(data_dict, job)  # This step is corridor specific
+        74 |         return cls.run_computation(
+        75 |             updated_data_dict,
+        76 |             groupby_column=groupby_column,
+        77 |         )
+        80 | gc_col = "category"
+---->   81 | return VocabUnderstanding.run_computation_helper(data, job, gc_col)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-05-2025 03:45 PM">
+      data          = {'current': <spark df>}
+      gc_col        = 'category'
+ Report "Financial Terms Understanding" <v1>, line 74, in run_computation_helper
+        66 | @classmethod
+        67 | def run_computation_helper(
+        68 |     cls,
+(...)
+        71 |     groupby_column=None,
+        72 | ):
+        73 |     updated_data_dict = cls.process_data(data_dict, job)  # This step is corridor specific
+---->   74 |     return cls.run_computation(
+                        ^^^^^^^^^^^^^^^^^^^^
+        75 |         updated_data_dict,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+        76 |         groupby_column=groupby_column,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        77 |     )
+                 ^
+    Local variables:
+      data_dict     = {'current': <spark df>}
+      job           = <Job job_type="Simulati...: Sep-05-2025 03:45 PM">
+      groupby_column = 'category'
+      updated_data_dict = {'Financial Terms Understanding': pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, text: object, evaluation: object]}
+ Report "Financial Terms Understanding" <v1>, line 27, in run_computation
+        24 | compute_metrics = ["cosine_similarity", "llm_similarity"]
+        25 | output_dict = {}
+        26 | for model_name, model_data in data_dict.items():
+---->   27 |     model_data["output"] = model_data["output"].apply(lambda x: x["response"])
+                                        ^^^^^^^^^^^^^^^^^^^^
+        28 |     cols = ["term", "definition", "output"]
+    Local variables:
+      data_dict     = {'Financial Terms Understanding': pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, text: object, evaluation: object]}
+      groupby_column = 'category'
+      compute_metrics = ['cosine_similarity', 'llm_similarity']
+      output_dict   = {}
+      model_name    = 'Financial Terms Understanding'
+      model_data    = pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, text: object, evaluation: object]
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+      3804 | if is_single_key:
+      3805 |     if self.columns.nlevels > 1:
+      3806 |         return self._getitem_multilevel(key)
+----> 3807 |     indexer = self.columns.get_loc(key)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+      3808 |     if is_integer(indexer):
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+      3801 | try:
+      3802 |     return self._engine.get_loc(casted_key)
+      3803 | except KeyError as err:
+----> 3804 |     raise KeyError(key) from err
+      3805 | except TypeError:
+      3806 |     # If we have a listlike key, _check_indexing_error will raise
+      3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+      3808 |     #  the TypeError.
+KeyError: 'output'
+Logs:
+[2025-09-05 10:17:09 UTC] Error occured while running Report "Financial Terms Understanding" definition

@@ -1,0 +1,5 @@
+[2025-09-03 12:01:08 UTC] Starting Spark Job with 4 partition(s).
+[2025-09-03 12:01:13 UTC] Spark created 1 task(s): 0 ACTIVE, 1 COMPLETED, 0 FAILED tasks
+[2025-09-03 12:04:13 UTC] Spark created 11 task(s): 0 ACTIVE, 11 COMPLETED, 0 FAILED tasks
+[2025-09-03 12:04:13 UTC] Processed all records
+[2025-09-03 12:04:19 UTC] Execution completed - 700 records ran successfully and 0 records had errors

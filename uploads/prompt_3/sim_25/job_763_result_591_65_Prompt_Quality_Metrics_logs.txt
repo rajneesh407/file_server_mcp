@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report "Prompt Quality Evaluation" <v1>, line 108, in <definition>
+       103 |     return overall_readiness, metrics_df, tags_df
+       106 | test_prompt = data["current"].toPandas()["output"].iloc[0]
+       107 | test_goal = job.current.description
+---->  108 | overall_readiness, metrics_df, tags_df = evaluate(test_prompt, test_goal)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       109 | return {"overall_readiness": overall_readiness, "metrics_df": metrics_df, "tags_df": tags_df}
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 08:22 PM">
+      data          = {'current': <spark df>}
+      test_prompt   = '# PERSONA & TONE\nYou ...story: []\n            '
+      test_goal     = 'This is a comprehensiv...ion and audit purposes.'
+ Report "Prompt Quality Evaluation" <v1>, line 87, in evaluate
+        84 | for model_name, details in models.items():
+        85 |     row[f"Score {model_name}"] = int(details["score"])
+        86 |     row[f"Explanation {model_name}"] = details["explanation"]
+---->   87 |     row[f"Response {model_name}"] = details["response"]
+                                                 ^^^^^^^^^^^^^^^^^^^
+        88 |     row[f"Tags {model_name}"] = details["tags"]
+    Local variables:
+      prompt        = '# PERSONA & TONE\nYou ...story: []\n            '
+      goal          = 'This is a comprehensiv...ion and audit purposes.'
+      metric_scores_and_reasoning = {'Grammatical Correctness': {'Reviewer-1': {'explanation': [{'comment': 'The prompt is well-wri...nd grammatically sound.', 'suggestion': 'N/A', 'tags': []}], 'score': '5', 'tags': []}}}
+      metric        = 'Grammatical Correctness'
+      current_metric = 'ou are an expert evalu... any)"]\n}}<END FORMAT>'
+      model         = 'Reviewer-1'
+      response      = {'human reason': 'The prompt demonstrate...ammar rules throughout.', 'reason': [{'comment': 'The prompt is well-wri...nd grammatically sound.', 'suggestion': 'N/A', 'tags': []}], 'score': '5', 'tags': []}
+      rows          = []
+      models        = {'Reviewer-1': {'explanation': [{'comment': 'The prompt is well-wri...nd grammatically sound.', 'suggestion': 'N/A', 'tags': []}], 'score': '5', 'tags': []}}
+      row           = {'Explanation Reviewer-1': [{'comment': 'The prompt is well-wri...nd grammatically sound.', 'suggestion': 'N/A', 'tags': []}], 'Metric': 'Grammatical Correctness', 'Score Reviewer-1': 5}
+      model_name    = 'Reviewer-1'
+      details       = {'explanation': [{'comment': 'The prompt is well-wri...nd grammatically sound.', 'suggestion': 'N/A', 'tags': []}], 'score': '5', 'tags': []}
+KeyError: 'response'
+Logs:
+[2025-09-04 14:54:21 UTC] Error occured while running Report "Prompt Quality Evaluation" definition

@@ -1,0 +1,100 @@
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Figure "Average Prompt Quality Score" <v1>, line 46, in <definition>
+         1 |     score = raw_output["average_score"]
+         2 |     return f"""
+                        ^^^^
+         3 |     <!DOCTYPE html>
+                 ^^^^^^^^^^^^^^^
+         4 |     <html lang="en">
+                 ^^^^^^^^^^^^^^^^
+         5 |     <head>
+                 ^^^^^^
+         6 |     <meta charset="UTF-8">
+                 ^^^^^^^^^^^^^^^^^^^^^^
+         7 |     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         8 |     <title>KPI Card</title>
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+         9 |     <style>
+                 ^^^^^^^
+        10 |         body {{
+                 ^^^^^^^^^^^
+        11 |             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        12 |             display: flex;
+                 ^^^^^^^^^^^^^^^^^^^^^^
+        13 |             justify-content: center;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        14 |             align-items: center;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        15 |             min-height: 100vh;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        16 |             background-color: #f0f2f5;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        17 |         }}
+                 ^^^^^^
+        18 |         .kpi-card {{
+                 ^^^^^^^^^^^^^^^^
+        19 |             background-color: #ffffff;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        20 |             padding: 25px 40px;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        21 |             border-radius: 12px;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        22 |             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        23 |             text-align: center;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        24 |             border-left: 5px solid #007bff;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        25 |         }}
+                 ^^^^^^
+        26 |         .kpi-card h1 {{font - size: 4em;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        27 |             margin: 0;
+                 ^^^^^^^^^^^^^^^^^^
+        28 |             color: #333;
+                 ^^^^^^^^^^^^^^^^^^^^
+        29 |         }}
+                 ^^^^^^
+        30 |         .kpi-card p {{
+                 ^^^^^^^^^^^^^^^^^^
+        31 |             margin: 0;
+                 ^^^^^^^^^^^^^^^^^^
+        32 |             font-size: 1.1em;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+        33 |             color: #6c757d;
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+        34 |             text-transform: uppercase;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        35 |             letter-spacing: 1px;
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        36 |         }}
+                 ^^^^^^
+        37 |     </style>
+                 ^^^^^^^^
+        38 |     </head>
+                 ^^^^^^^
+        39 |     <body>
+                 ^^^^^^
+        40 |     <div class="kpi-card">
+                 ^^^^^^^^^^^^^^^^^^^^^^
+        41 |         <h1>{score}</h1>
+                 ^^^^^^^^^^^^^^^^^^^^
+        42 |         <p>Average Score</p>
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+        43 |     </div>
+                 ^^^^^^
+        44 |     </body>
+                 ^^^^^^^
+        45 |     </html>
+                 ^^^^^^^
+---->   46 |     """.format(score=raw_output["average_score"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 09:02 PM">
+      raw_output    = {'average_score': 4.0, 'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: int64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+      score         = 4.0
+KeyError: '\n            font-family'

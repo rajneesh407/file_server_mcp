@@ -1,0 +1,30 @@
+Error occured while generating Report Output "Metrics Table"
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last):
+ Report Output "Metrics Table" <v1>, line 115, in <definition>
+       103 |         html += "</tr>"
+       105 |     html += """
+       106 |                     </tbody>
+       107 |                 </table>
+(...)
+       110 |     </div>
+       111 |     """
+       112 |     return html
+---->  115 | consolidated_df = consolidated_metrics_table(raw_output)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       116 | return generate_metrics_html(consolidated_df)
+    Local variables:
+      job           = <Job job_type="Simulati...: Jun-20-2025 02:21 PM">
+      raw_output    = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...iased in all scenarios.', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+ Report Output "Metrics Table" <v1>, line 10, in consolidated_metrics_table
+         7 | prompt_names = list(raw_output.keys())
+         8 | if not prompt_names:
+         9 |     return pd.DataFrame()
+---->   10 | first_prompt_metrics_df = raw_output[prompt_names[0]]["metrics_df"]
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        11 | if isinstance(first_prompt_metrics_df, list):
+    Local variables:
+      raw_output    = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...iased in all scenarios.', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+      consolidated_rows = []
+      prompt_names  = ['overall_readiness', 'metrics_df', 'tags_df', 'pointers_for_improvement']
+IndexError: invalid index to scalar variable.

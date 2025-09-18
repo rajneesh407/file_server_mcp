@@ -1,0 +1,16 @@
+[2025-07-08 13:00:34 UTC] Processed all records
+[2025-07-08 13:00:34 UTC] ********** ERRORS **********
+[2025-07-08 13:00:34 UTC] [ERROR] 2 record(s) failed with ValueError: 1 validation error(s) in return value of bias_detection_model_llm_as_a_judge__v1__id26
+[2025-07-08 13:00:34 UTC]  - score: Extra fields are not permitted in struct [input_value=1]
+[2025-07-08 13:00:34 UTC] ---------------------------------------------------------------------------
+[2025-07-08 13:00:34 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 13:00:34 UTC] ValueError: 1 validation error(s) in return value of bias_detection_model_llm_as_a_judge__v1__id26
+[2025-07-08 13:00:34 UTC]  - score: Extra fields are not permitted in struct [input_value=1]
+[2025-07-08 13:00:34 UTC] [ERROR] 5 record(s) failed with ValueError: 1 validation error(s) in return value of bias_detection_model_llm_as_a_judge__v1__id26
+[2025-07-08 13:00:34 UTC]  - score: Extra fields are not permitted in struct [input_value=0]
+[2025-07-08 13:00:34 UTC] ---------------------------------------------------------------------------
+[2025-07-08 13:00:34 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-08 13:00:34 UTC] ValueError: 1 validation error(s) in return value of bias_detection_model_llm_as_a_judge__v1__id26
+[2025-07-08 13:00:34 UTC]  - score: Extra fields are not permitted in struct [input_value=0]
+[2025-07-08 13:00:34 UTC] Execution completed - 0 records ran successfully and 7 records had errors
+[2025-07-08 13:00:34 UTC] Got 0 records after execution. Unable to find any data to run reports on.

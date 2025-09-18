@@ -1,0 +1,60 @@
+[2025-09-03 01:00:45 UTC] Preparing Evaluation #1
+[2025-09-03 01:00:53 UTC] ---------------------------------------------------------------------------
+[2025-09-03 01:00:53 UTC] KeyError                                  Traceback (most recent call last):
+[2025-09-03 01:00:53 UTC]  Data Source "Evaluation #1", line 17, in <definition>
+[2025-09-03 01:00:53 UTC]          9 | df = df.dropna(subset=["sub_intent"])
+[2025-09-03 01:00:53 UTC]         10 | df['db_call_needed'] = np.where(df['require_facts'] == True, 1, 0)
+[2025-09-03 01:00:53 UTC]         13 | # Take a random sample of n rows per intent
+[2025-09-03 01:00:53 UTC]         14 | validation_sample = (
+[2025-09-03 01:00:53 UTC]         15 |     df.groupby(["intent","db_call_needed"], group_keys=False)
+[2025-09-03 01:00:53 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]         16 |     .apply(lambda x: x.sample(min(len(x), sample_size), random_state=42))
+[2025-09-03 01:00:53 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC] ---->   17 |     .reset_index(level=["intent", "db_call_needed"])
+[2025-09-03 01:00:53 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]         18 |     .reset_index(drop=True)
+[2025-09-03 01:00:53 UTC]         19 | )
+[2025-09-03 01:00:53 UTC]         20 | # Rename fields
+[2025-09-03 01:00:53 UTC]     Local variables:
+[2025-09-03 01:00:53 UTC]       existing_customer_card_related_response_accuracy_data = DataFrame[index: string...ql_query_sqlite: string]
+[2025-09-03 01:00:53 UTC]       df            = pandas.DataFrame[index: object, intent: object, sub_intent: object, user_message: object, require_facts: object, ground_truth_facts: object, baseline_message: object, baseline_message_with_details: object, customer_id: object, filter_type: object, sub_filter_type: object, filter_value: object, sql_query: object, length: object, grammar_error: object, urgent: object, polite: object, sql_query_sqlite: object, db_call_needed: int64]
+[2025-09-03 01:00:53 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/util/_decorators.py", line 331, in deprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper
+[2025-09-03 01:00:53 UTC]        323 | @wraps(func)
+[2025-09-03 01:00:53 UTC]        324 | def wrapper(*args, **kwargs):
+[2025-09-03 01:00:53 UTC]        325 |     if len(args) > num_allow_args:
+[2025-09-03 01:00:53 UTC]        326 |         warnings.warn(
+[2025-09-03 01:00:53 UTC]        327 |             msg.format(arguments=_format_argument_list(allow_args)),
+[2025-09-03 01:00:53 UTC]        328 |             FutureWarning,
+[2025-09-03 01:00:53 UTC]        329 |             stacklevel=find_stack_level(),
+[2025-09-03 01:00:53 UTC]        330 |         )
+[2025-09-03 01:00:53 UTC] ---->  331 |     return func(*args, **kwargs)
+[2025-09-03 01:00:53 UTC]                         ^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 6314, in DataFrame.reset_index
+[2025-09-03 01:00:53 UTC]       6311 | if level is not None:
+[2025-09-03 01:00:53 UTC]       6312 |     if not isinstance(level, (tuple, list)):
+[2025-09-03 01:00:53 UTC]       6313 |         level = [level]
+[2025-09-03 01:00:53 UTC] ----> 6314 |     level = [self.index._get_level_number(lev) for lev in level]
+[2025-09-03 01:00:53 UTC]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]       6315 |     if len(level) < self.index.nlevels:
+[2025-09-03 01:00:53 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 6314, in <listcomp>
+[2025-09-03 01:00:53 UTC]       6311 | if level is not None:
+[2025-09-03 01:00:53 UTC]       6312 |     if not isinstance(level, (tuple, list)):
+[2025-09-03 01:00:53 UTC]       6313 |         level = [level]
+[2025-09-03 01:00:53 UTC] ----> 6314 |     level = [self.index._get_level_number(lev) for lev in level]
+[2025-09-03 01:00:53 UTC]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]       6315 |     if len(level) < self.index.nlevels:
+[2025-09-03 01:00:53 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 2055, in Index._get_level_number
+[2025-09-03 01:00:53 UTC]       2054 | def _get_level_number(self, level) -> int:
+[2025-09-03 01:00:53 UTC] ----> 2055 |     self._validate_index_level(level)
+[2025-09-03 01:00:53 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 01:00:53 UTC]       2056 |     return 0
+[2025-09-03 01:00:53 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 2050, in Index._validate_index_level
+[2025-09-03 01:00:53 UTC]       2045 |     elif level > 0:
+[2025-09-03 01:00:53 UTC]       2046 |         raise IndexError(
+[2025-09-03 01:00:53 UTC]       2047 |             f"Too many levels: Index has only 1 level, not {level + 1}"
+[2025-09-03 01:00:53 UTC]       2048 |         )
+[2025-09-03 01:00:53 UTC]       2049 | elif level != self.name:
+[2025-09-03 01:00:53 UTC] ----> 2050 |     raise KeyError(
+[2025-09-03 01:00:53 UTC]       2051 |         f"Requested level ({level}) does not match index name ({self.name})"
+[2025-09-03 01:00:53 UTC]       2052 |     )
+[2025-09-03 01:00:53 UTC] KeyError: 'Requested level (intent) does not match index name (None)'

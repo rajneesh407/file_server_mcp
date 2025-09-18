@@ -1,0 +1,1 @@
+{"columns":["Intent","Database call","No database call"],"index":[0,1,2,3,4],"data":[["ACTIVATE CARD",2,0],["BLOCK CARD",1,0],["CARD DETAILS",0,1],["CHECK CARD ANNUAL FEE",0,1],["CHECK CURRENT BALANCE ON CARD",1,0]]}

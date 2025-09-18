@@ -1,0 +1,61 @@
+[2025-09-04 12:30:02 UTC] Preparing Evaluation #1
+[2025-09-04 12:30:04 UTC] ---------------------------------------------------------------------------
+[2025-09-04 12:30:04 UTC] ValueError                                Traceback (most recent call last):
+[2025-09-04 12:30:04 UTC]  Data Source "Evaluation #1", line 18, in <definition>
+[2025-09-04 12:30:04 UTC]         14 | # Initialize Spark session and convert to Spark DataFrame
+[2025-09-04 12:30:04 UTC]         15 | from pyspark.sql import SparkSession
+[2025-09-04 12:30:04 UTC]         17 | spark = SparkSession.builder.getOrCreate()
+[2025-09-04 12:30:04 UTC] ---->   18 | return spark.createDataFrame(df)
+[2025-09-04 12:30:04 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]     Local variables:
+[2025-09-04 12:30:04 UTC]       financial_terms_with_definitions = DataFrame[index: string...ing, definition: string]
+[2025-09-04 12:30:04 UTC]       df            = pandas.DataFrame[index: object, term: object, category: object, definition: object, temperature: int64, system_instruction: object, text: object]
+[2025-09-04 12:30:04 UTC]       spark         = <pyspark.sql.session.Sp...bject at 0x7db2d10b6710>
+[2025-09-04 12:30:04 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/session.py", line 1273, in SparkSession.createDataFrame
+[2025-09-04 12:30:04 UTC]       1265 |             schema = StructType(
+[2025-09-04 12:30:04 UTC]       1266 |                 [StructField(name, spark_type, nullable=True) for name in column_names]
+[2025-09-04 12:30:04 UTC]       1267 |             )
+[2025-09-04 12:30:04 UTC]       1269 |     data = pd.DataFrame(data, columns=column_names)
+[2025-09-04 12:30:04 UTC]       1271 | if has_pandas and isinstance(data, pd.DataFrame):
+[2025-09-04 12:30:04 UTC]       1272 |     # Create a DataFrame from pandas DataFrame.
+[2025-09-04 12:30:04 UTC] ----> 1273 |     return super(SparkSession, self).createDataFrame(  # type: ignore[call-overload]
+[2025-09-04 12:30:04 UTC]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]       1274 |         data, schema, samplingRatio, verifySchema
+[2025-09-04 12:30:04 UTC]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]       1275 |     )
+[2025-09-04 12:30:04 UTC]                  ^
+[2025-09-04 12:30:04 UTC]       1276 | return self._create_dataframe(
+[2025-09-04 12:30:04 UTC]       1277 |     data, schema, samplingRatio, verifySchema  # type: ignore[arg-type]
+[2025-09-04 12:30:04 UTC]       1278 | )
+[2025-09-04 12:30:04 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/pandas/conversion.py", line 440, in SparkConversionMixin.createDataFrame
+[2025-09-04 12:30:04 UTC]        437 |             warn(msg)
+[2025-09-04 12:30:04 UTC]        438 |             raise
+[2025-09-04 12:30:04 UTC]        439 | converted_data = self._convert_from_pandas(data, schema, timezone)
+[2025-09-04 12:30:04 UTC] ---->  440 | return self._create_dataframe(converted_data, schema, samplingRatio, verifySchema)
+[2025-09-04 12:30:04 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/session.py", line 1318, in SparkSession._create_dataframe
+[2025-09-04 12:30:04 UTC]       1315 | if isinstance(data, RDD):
+[2025-09-04 12:30:04 UTC]       1316 |     rdd, struct = self._createFromRDD(data.map(prepare), schema, samplingRatio)
+[2025-09-04 12:30:04 UTC]       1317 | else:
+[2025-09-04 12:30:04 UTC] ----> 1318 |     rdd, struct = self._createFromLocal(map(prepare, data), schema)
+[2025-09-04 12:30:04 UTC]                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]       1319 | assert self._jvm is not None
+[2025-09-04 12:30:04 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/session.py", line 962, in SparkSession._createFromLocal
+[2025-09-04 12:30:04 UTC]        958 | if not isinstance(data, list):
+[2025-09-04 12:30:04 UTC]        959 |     data = list(data)
+[2025-09-04 12:30:04 UTC]        961 | if schema is None or isinstance(schema, (list, tuple)):
+[2025-09-04 12:30:04 UTC] ---->  962 |     struct = self._inferSchemaFromList(data, names=schema)
+[2025-09-04 12:30:04 UTC]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-04 12:30:04 UTC]        963 |     converter = _create_converter(struct)
+[2025-09-04 12:30:04 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/session.py", line 850, in SparkSession._inferSchemaFromList
+[2025-09-04 12:30:04 UTC]        835 | prefer_timestamp_ntz = is_timestamp_ntz_preferred()
+[2025-09-04 12:30:04 UTC]        836 | schema = reduce(
+[2025-09-04 12:30:04 UTC]        837 |     _merge_type,
+[2025-09-04 12:30:04 UTC]        838 |     (
+[2025-09-04 12:30:04 UTC] (...)
+[2025-09-04 12:30:04 UTC]        847 |     ),
+[2025-09-04 12:30:04 UTC]        848 | )
+[2025-09-04 12:30:04 UTC]        849 | if _has_nulltype(schema):
+[2025-09-04 12:30:04 UTC] ---->  850 |     raise ValueError("Some of types cannot be determined after inferring")
+[2025-09-04 12:30:04 UTC]        851 | return schema
+[2025-09-04 12:30:04 UTC] ValueError: Some of types cannot be determined after inferring

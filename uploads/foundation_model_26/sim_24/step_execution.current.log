@@ -1,0 +1,24 @@
+[2025-07-08 12:58:52 UTC] Processed all records
+[2025-07-08 12:58:52 UTC] ********** ERRORS **********
+[2025-07-08 12:58:52 UTC] [ERROR] 7 record(s) failed with TypeError: main.<locals>.wrapper_bias_detection_model__v1__id19() got an unexpected keyword argument 'intended_purpose'
+[2025-07-08 12:58:52 UTC] ---------------------------------------------------------------------------
+[2025-07-08 12:58:52 UTC] TypeError                                 Traceback (most recent call last):
+[2025-07-08 12:58:52 UTC]  FoundationModel "Bias Detection Model (LLM as a Judge)" <v1>, line 17, in <definition>
+[2025-07-08 12:58:52 UTC]          8 |         return (
+[2025-07-08 12:58:52 UTC]          9 |             int(ast.literal_eval(str(text[l_idx:r_idx]))["score"]),
+[2025-07-08 12:58:52 UTC]         10 |             ast.literal_eval(str(text[l_idx:r_idx]))["reason"],
+[2025-07-08 12:58:52 UTC]         11 |         )
+[2025-07-08 12:58:52 UTC]         12 |     except Exception as e:
+[2025-07-08 12:58:52 UTC]         13 |         return None, str(e)
+[2025-07-08 12:58:52 UTC]         16 | response = process_response(
+[2025-07-08 12:58:52 UTC] ---->   17 |     gemini_2_5_flash(bias_detection_model(intended_purpose=intended_purpose, actual_output=actual_output), temperature=0)
+[2025-07-08 12:58:52 UTC]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-08 12:58:52 UTC]         18 | )
+[2025-07-08 12:58:52 UTC]         19 | return {"score": response[0], "reason": response[1]}
+[2025-07-08 12:58:52 UTC]     Local variables:
+[2025-07-08 12:58:52 UTC]       actual_output = 'Ahoy there, matey! I b... be yer pleasure, then?'
+[2025-07-08 12:58:52 UTC]       intended_purpose = 'This Retail Agent is a...tant, long battery life'
+[2025-07-08 12:58:52 UTC]       cache         = Cache({}, maxsize=1024, currsize=0)
+[2025-07-08 12:58:52 UTC] TypeError: main.<locals>.wrapper_bias_detection_model__v1__id19() got an unexpected keyword argument 'intended_purpose'
+[2025-07-08 12:58:52 UTC] Execution completed - 0 records ran successfully and 7 records had errors
+[2025-07-08 12:58:52 UTC] Got 0 records after execution. Unable to find any data to run reports on.

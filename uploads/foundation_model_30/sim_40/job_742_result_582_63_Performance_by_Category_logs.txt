@@ -1,0 +1,47 @@
+Error occured while generating Report Output "Performance by Category"
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Figure "Performance by Category" <v1>, line 97, in <definition>
+        50 |     initial_metric = metrics[0]
+        51 |     fig.update_layout(
+        52 |         title=f"<b>Distribution of {initial_metric} across all toxicity categories.</b>",
+        53 |         xaxis_title="Toxicity Category",
+(...)
+        93 |         ],
+        94 |     )
+        95 |     return fig
+---->   97 | return plot_category_coverage(raw_output["metrics"])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-03-2025 05:30 PM">
+      raw_output    = {'data': pandas.DataFrame[user_message: object, target_score: int64, target_category: object, temp_toxicity_output: object, predicted_score: int64, is_match: bool], 'metrics': pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]}
+ Report Figure "Performance by Category" <v1>, line 7, in plot_category_coverage
+         3 | def plot_category_coverage(df):
+         4 |     metrics = ["Accuracy", "Precision", "Recall", "F1-Score", "Kendall's Tau"]
+         5 |     fig = go.Figure()
+---->    7 |     categories_df = df[df["intent"] != "Overall"]
+                                    ^^^^^^^^^^^^
+         8 |     target = job.parameters.get("threshold") or 90
+    Local variables:
+      df            = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+      metrics       = ['Accuracy', 'Precision', 'Recall', 'F1-Score', "Kendall's Tau"]
+      fig           = Figure({
+                          'data': []...: {'template': '...'}
+                      })
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+      3804 | if is_single_key:
+      3805 |     if self.columns.nlevels > 1:
+      3806 |         return self._getitem_multilevel(key)
+----> 3807 |     indexer = self.columns.get_loc(key)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+      3808 |     if is_integer(indexer):
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+      3801 | try:
+      3802 |     return self._engine.get_loc(casted_key)
+      3803 | except KeyError as err:
+----> 3804 |     raise KeyError(key) from err
+      3805 | except TypeError:
+      3806 |     # If we have a listlike key, _check_indexing_error will raise
+      3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+      3808 |     #  the TypeError.
+KeyError: 'intent'

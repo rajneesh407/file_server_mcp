@@ -1,0 +1,23 @@
+[2025-08-04 10:58:06 UTC] Traceback (most recent call last):
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 971, in set_canvas_step
+[2025-08-04 10:58:06 UTC]     yield logfile
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 1045, in run_canvas
+[2025-08-04 10:58:06 UTC]     taskdata = filter_canvas(taskdata)
+[2025-08-04 10:58:06 UTC]                ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 137, in run_artifact_task
+[2025-08-04 10:58:06 UTC]     datas, get_errors = function(datas)
+[2025-08-04 10:58:06 UTC]                         ^^^^^^^^^^^^^^^
+[2025-08-04 10:58:06 UTC]   File "<tmpfile-789283a7-0d0c-4dac-9ea3-19154780c3e1>", line 235, in main
+[2025-08-04 10:58:06 UTC]     data = data.select(['index'])
+[2025-08-04 10:58:06 UTC]            ^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/sql/dataframe.py", line 3229, in select
+[2025-08-04 10:58:06 UTC]     jdf = self._jdf.select(self._jcols(*cols))
+[2025-08-04 10:58:06 UTC]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2025-08-04 10:58:06 UTC]     return_value = get_return_value(
+[2025-08-04 10:58:06 UTC]                    ^^^^^^^^^^^^^^^^^
+[2025-08-04 10:58:06 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2025-08-04 10:58:06 UTC]     raise converted from None
+[2025-08-04 10:58:06 UTC] pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `index` cannot be resolved. Did you mean one of the following? [`sub_intent`, `customer_id`, `ground_truth`, `customer_name`, `user_message`].;
+[2025-08-04 10:58:06 UTC] 'Project ['index]
+[2025-08-04 10:58:06 UTC] +- LogicalRDD [customer_id#35, customer_name#36, user_message#37, sub_intent#38, ground_truth#39], false

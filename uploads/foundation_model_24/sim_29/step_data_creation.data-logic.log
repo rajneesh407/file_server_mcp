@@ -1,0 +1,9 @@
+[2025-07-16 15:27:30 UTC] Preparing Evaluation #1
+[2025-07-16 15:27:39 UTC] Evaluation #1 returned a column "index" - but is not used.
+[2025-07-16 15:27:39 UTC] Evaluation #1 returned a column "source" - but is not used.
+[2025-07-16 15:27:39 UTC] Evaluation #1 returned a column "category" - but is not used.
+[2025-07-16 15:27:39 UTC] Evaluation #1 returned a column "query_category" - but is not used.
+[2025-07-16 15:27:40 UTC] Evaluation #1 returned a column "type" - but is not used.
+[2025-07-16 15:27:50 UTC] Evaluation #1 preparation completed - 5 record(s) found
+[2025-07-16 15:27:50 UTC] Preparing input data for execution
+[2025-07-16 15:27:55 UTC] Final number of records that will be used for execution (from all data sources): 5 record(s)

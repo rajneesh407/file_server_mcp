@@ -1,0 +1,56 @@
+Error occured while generating Report Output "Prompt Quality Metrics"
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Figure "Prompt Quality Metrics" <v1>, line 25, in <definition>
+        13 |     fig.update_layout(
+        14 |         title='<b>Comprehensive Risk Evaluation Across Multiple Dimensions for Prompt</b>',
+        15 |         polar=dict(
+(...)
+        21 |         height=500, 
+        22 |     )
+        23 |     return fig 
+        24 | df  = raw_output['metrics_df'].copy(deep=True)[0:len(raw_output['metrics_df'])-1]
+---->   25 | return radial_chart(df)
+                    ^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 08:33 PM">
+      raw_output    = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: int64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, common_tags: object], 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+      df            = pandas.DataFrame[Metric: object, Score Reviewer-1: int64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, common_tags: object]
+ Report Figure "Prompt Quality Metrics" <v1>, line 7, in radial_chart
+         3 | def radial_chart(df):
+         4 |     fig = go.Figure()
+         6 |     fig.add_trace(go.Scatterpolar(
+---->    7 |         r=df['Mean Score'].tolist() + [df['Mean Score'].tolist()[0]],
+                       ^^^^^^^^^^^^^^^^
+         8 |         theta=df['Metric'].tolist() + [df['Metric'].tolist()[0]],
+         9 |         fill='toself',
+        10 |         name='Mean Score'
+        11 |     ))
+        13 |     fig.update_layout(
+        14 |         title='<b>Comprehensive Risk Evaluation Across Multiple Dimensions for Prompt</b>',
+        15 |         polar=dict(
+(...)
+        21 |         height=500, 
+        22 |     )
+    Local variables:
+      df            = pandas.DataFrame[Metric: object, Score Reviewer-1: int64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, common_tags: object]
+      fig           = Figure({
+                          'data': []...: {'template': '...'}
+                      })
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+      3804 | if is_single_key:
+      3805 |     if self.columns.nlevels > 1:
+      3806 |         return self._getitem_multilevel(key)
+----> 3807 |     indexer = self.columns.get_loc(key)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+      3808 |     if is_integer(indexer):
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+      3801 | try:
+      3802 |     return self._engine.get_loc(casted_key)
+      3803 | except KeyError as err:
+----> 3804 |     raise KeyError(key) from err
+      3805 | except TypeError:
+      3806 |     # If we have a listlike key, _check_indexing_error will raise
+      3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+      3808 |     #  the TypeError.
+KeyError: 'Mean Score'

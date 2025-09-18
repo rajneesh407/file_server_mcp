@@ -1,0 +1,32 @@
+Error occured while generating Report Output "Average Prompt Quality Score"
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Figure "Average Prompt Quality Score" <v1>, line 1, in <definition>
+---->    1 |     score = raw_output["metrics_df"]["average_score"]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         2 |     return f"""
+         3 |     <!DOCTYPE html>
+         4 |     <html lang="en">
+(...)
+        45 |     </html>
+        46 |     """.format(score=raw_output["metrics_df"]["average_score"])
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 09:02 PM">
+      raw_output    = {'average_score': 4.0, 'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: int64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+      3804 | if is_single_key:
+      3805 |     if self.columns.nlevels > 1:
+      3806 |         return self._getitem_multilevel(key)
+----> 3807 |     indexer = self.columns.get_loc(key)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+      3808 |     if is_integer(indexer):
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+      3801 | try:
+      3802 |     return self._engine.get_loc(casted_key)
+      3803 | except KeyError as err:
+----> 3804 |     raise KeyError(key) from err
+      3805 | except TypeError:
+      3806 |     # If we have a listlike key, _check_indexing_error will raise
+      3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+      3808 |     #  the TypeError.
+KeyError: 'average_score'

@@ -1,0 +1,42 @@
+Error occured while generating Report Output "Summary metrics"
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Figure "Summary metrics" <v1>, line 159, in <definition>
+        55 |     final_html = f"""
+        56 | <!DOCTYPE html>
+        57 | <html lang="en">
+(...)
+       154 | </html>
+       155 | """
+       156 |     return final_html
+       158 | metrics_df = raw_output["metrics"].copy(deep=True)
+---->  159 | return generate_metrics_report_html(metrics_df)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-03-2025 05:30 PM">
+      raw_output    = {'data': pandas.DataFrame[user_message: object, target_score: int64, target_category: object, temp_toxicity_output: object, predicted_score: int64, is_match: bool], 'metrics': pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]}
+      metrics_df    = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+ Report Figure "Summary metrics" <v1>, line 2, in generate_metrics_report_html
+         1 | def generate_metrics_report_html(raw_output):
+---->    2 |     overall_metrics = raw_output.loc[raw_output["intent"] == "Overall"].iloc[0]
+                                                  ^^^^^^^^^^^^^^^^^^^^
+         3 |     per_category_metrics = raw_output.loc[raw_output["intent"] != "Overall"]
+    Local variables:
+      raw_output    = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+      3804 | if is_single_key:
+      3805 |     if self.columns.nlevels > 1:
+      3806 |         return self._getitem_multilevel(key)
+----> 3807 |     indexer = self.columns.get_loc(key)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+      3808 |     if is_integer(indexer):
+ File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+      3801 | try:
+      3802 |     return self._engine.get_loc(casted_key)
+      3803 | except KeyError as err:
+----> 3804 |     raise KeyError(key) from err
+      3805 | except TypeError:
+      3806 |     # If we have a listlike key, _check_indexing_error will raise
+      3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+      3808 |     #  the TypeError.
+KeyError: 'intent'

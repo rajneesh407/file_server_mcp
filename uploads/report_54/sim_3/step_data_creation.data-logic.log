@@ -1,0 +1,9 @@
+[2025-09-06 11:06:52 UTC] Preparing Evaluation #1
+[2025-09-06 11:06:54 UTC] Evaluation #1 returned a column "index" - but is not used.
+[2025-09-06 11:06:54 UTC] Evaluation #1 returned a column "sub_intent" - but is not used.
+[2025-09-06 11:06:54 UTC] Evaluation #1 returned a column "user_question" - but is not used.
+[2025-09-06 11:06:54 UTC] Evaluation #1 returned a column "llm_response" - but is not used.
+[2025-09-06 11:06:54 UTC] Evaluation #1 returned a column "output" - but is not used.
+[2025-09-06 11:07:00 UTC] Evaluation #1 preparation completed - 5 record(s) found
+[2025-09-06 11:07:00 UTC] Preparing input data for execution
+[2025-09-06 11:07:04 UTC] Final number of records that will be used for execution (from all data sources): 5 record(s)

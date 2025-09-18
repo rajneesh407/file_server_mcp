@@ -1,0 +1,196 @@
+---------------------------------------------------------------------------
+AuthenticationError                       Traceback (most recent call last):
+ Report "Prompt Evaluation - (Generate Trust Score)" <v1>, line 167, in <definition>
+       164 |     prompt_dict.update(job.challengers)
+       165 | for prompt_name, prompt_obj in prompt_dict.items():
+       166 |     test_prompt = prompt_obj.template
+---->  167 |     overall_readiness, metrics_df, tags_df, pointers_for_improvement = evaluate(test_prompt)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^
+       168 |     output_dict[prompt_name] = {
+       169 |         "overall_readiness": overall_readiness,
+       170 |         "metrics_df": metrics_df,
+       171 |         "tags_df": tags_df,
+       172 |         "pointers_for_improvement": pointers_for_improvement,
+       173 |     }
+    Local variables:
+      job           = <Job job_type="Simulati...: Jun-21-2025 10:45 AM">
+      data          = {'current': <spark df>}
+      output_dict   = {}
+      prompt_dict   = {'Customer Intent Classification Prompt': <Prompt name="Customer ...tion Prompt", version=1>}
+      prompt_name   = 'Customer Intent Classification Prompt'
+      prompt_obj    = <Prompt name="Customer ...tion Prompt", version=1>
+      test_prompt   = '\n### System Instructi...it any other Intents.\n'
+ Report "Prompt Evaluation - (Generate Trust Score)" <v1>, line 106, in evaluate
+       103 |     metric_scores_and_reasoning[metric] = {}
+       104 | for model, llm_model in reviewers.items():
+       105 |     metric_scores_and_reasoning[metric][model] = {}
+---->  106 |     response = llm_model(current_metric, temperature=0)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       107 |     response_parsed = process_response(response)
+    Local variables:
+      prompt        = '\n### System Instructi...it any other Intents.\n'
+      metric_scores_and_reasoning = {'Grammatical Correctness': {'Reviewer-1': {}}}
+      metric        = 'Grammatical Correctness'
+      current_metric = 'You are an expert in e...f any)"]\n}<END FORMAT>'
+      model         = 'Reviewer-1'
+ FoundationModel "Azure GPT 4.1" <v1>, line 23, in <definition>
+        17 |     cache["model"] = model
+        19 | client = model
+        21 | chat_prompt = [{"role": "system", "content": [{"type": "text", "text": text}]}]
+---->   23 | completion = client.chat.completions.create(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        24 |     model="corridor-gpt-4.1",
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        25 |     messages=chat_prompt,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+        26 |     max_tokens=1500,
+             ^^^^^^^^^^^^^^^^^^^^
+        27 |     temperature=float(temperature),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        28 |     top_p=0.95,
+             ^^^^^^^^^^^^^^^
+        29 |     frequency_penalty=0,
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+        30 |     presence_penalty=0,
+             ^^^^^^^^^^^^^^^^^^^^^^^
+        31 |     stop=None,
+             ^^^^^^^^^^^^^^
+        32 |     stream=False,
+             ^^^^^^^^^^^^^^^^^
+        33 | )
+             ^
+        35 | return completion.choices[0].message.content
+    Local variables:
+      cache         = Cache({'model': <openai...axsize=1024, currsize=1)
+      model         = <openai.lib.azure.Azure...bject at 0x7f33241f2b90>
+      client        = <openai.lib.azure.Azure...bject at 0x7f33241f2b90>
+      chat_prompt   = [{'content': [{'text': 'You are an expert in e...f any)"]\n}<END FORMAT>', 'type': 'text'}], 'role': 'system'}]
+ File "/opt/corridor_ggx/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in required_args.<locals>.inner.<locals>.wrapper
+       284 |         else:
+       285 |             msg = f"Missing required argument: {quote(missing[0])}"
+       286 |     raise TypeError(msg)
+---->  287 | return func(*args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^
+ File "/opt/corridor_ggx/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 925, in Completions.create
+       882 | @required_args(["messages", "model"], ["messages", "model", "stream"])
+       883 | def create(
+       884 |     self,
+(...)
+       922 |     timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+       923 | ) -> ChatCompletion | Stream[ChatCompletionChunk]:
+       924 |     validate_response_format(response_format)
+---->  925 |     return self._post(
+                        ^^^^^^^^^^^
+       926 |         "/chat/completions",
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+       927 |         body=maybe_transform(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+       928 |             {
+                 ^^^^^^^^^
+       929 |                 "messages": messages,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       930 |                 "model": model,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       931 |                 "audio": audio,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       932 |                 "frequency_penalty": frequency_penalty,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       933 |                 "function_call": function_call,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       934 |                 "functions": functions,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       935 |                 "logit_bias": logit_bias,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       936 |                 "logprobs": logprobs,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       937 |                 "max_completion_tokens": max_completion_tokens,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       938 |                 "max_tokens": max_tokens,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       939 |                 "metadata": metadata,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       940 |                 "modalities": modalities,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       941 |                 "n": n,
+                 ^^^^^^^^^^^^^^^^^^^
+       942 |                 "parallel_tool_calls": parallel_tool_calls,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       943 |                 "prediction": prediction,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       944 |                 "presence_penalty": presence_penalty,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       945 |                 "reasoning_effort": reasoning_effort,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       946 |                 "response_format": response_format,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       947 |                 "seed": seed,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+       948 |                 "service_tier": service_tier,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       949 |                 "stop": stop,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+       950 |                 "store": store,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       951 |                 "stream": stream,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       952 |                 "stream_options": stream_options,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       953 |                 "temperature": temperature,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       954 |                 "tool_choice": tool_choice,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       955 |                 "tools": tools,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       956 |                 "top_logprobs": top_logprobs,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       957 |                 "top_p": top_p,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       958 |                 "user": user,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+       959 |                 "web_search_options": web_search_options,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       960 |             },
+                 ^^^^^^^^^^
+       961 |             completion_create_params.CompletionCreateParamsStreaming
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       962 |             if stream
+                 ^^^^^^^^^^^^^^^^^
+       963 |             else completion_create_params.CompletionCreateParamsNonStreaming,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       964 |         ),
+                 ^^^^^^
+       965 |         options=make_request_options(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       966 |             extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       967 |         ),
+                 ^^^^^^
+       968 |         cast_to=ChatCompletion,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       969 |         stream=stream or False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       970 |         stream_cls=Stream[ChatCompletionChunk],
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       971 |     )
+                 ^
+ File "/opt/corridor_ggx/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1239, in SyncAPIClient.post
+      1225 | def post(
+      1226 |     self,
+      1227 |     path: str,
+(...)
+      1234 |     stream_cls: type[_StreamT] | None = None,
+      1235 | ) -> ResponseT | _StreamT:
+      1236 |     opts = FinalRequestOptions.construct(
+      1237 |         method="post", url=path, json_data=body, files=to_httpx_files(files), **options
+      1238 |     )
+----> 1239 |     return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ File "/opt/corridor_ggx/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1034, in SyncAPIClient.request
+      1030 |     if not err.response.is_closed:
+      1031 |         err.response.read()
+      1033 |     log.debug("Re-raising status error")
+----> 1034 |     raise self._make_status_error_from_response(err.response) from None
+      1036 | break
+openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}}
+Logs:
+[2025-06-21 05:16:05 UTC] Error occured while running Report "Prompt Evaluation - (Generate Trust Score)" definition

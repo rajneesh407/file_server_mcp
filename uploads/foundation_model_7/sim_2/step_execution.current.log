@@ -1,0 +1,23 @@
+[2025-07-01 07:22:18 UTC] Starting Spark Job with 1 partition(s).
+[2025-07-01 07:22:23 UTC] Spark created 5 task(s): 0 ACTIVE, 5 COMPLETED, 0 FAILED tasks
+[2025-07-01 07:22:23 UTC] Processed all records
+[2025-07-01 07:22:23 UTC] ********** ERRORS **********
+[2025-07-01 07:22:23 UTC] [ERROR] 1 record(s) failed with ModuleNotFoundError: No module named 'google.generativeai'
+[2025-07-01 07:22:23 UTC] ---------------------------------------------------------------------------
+[2025-07-01 07:22:23 UTC] ModuleNotFoundError                       Traceback (most recent call last):
+[2025-07-01 07:22:23 UTC]  FoundationModel "Gemini 2.5 Flash Preview-04-17" <v1>, line 11, in <definition>
+[2025-07-01 07:22:23 UTC]          8 | if 'model' in cache:
+[2025-07-01 07:22:23 UTC]          9 |     model = cache['model']
+[2025-07-01 07:22:23 UTC]         10 | else:
+[2025-07-01 07:22:23 UTC] ---->   11 |     model = init()
+[2025-07-01 07:22:23 UTC]                          ^^^^^^
+[2025-07-01 07:22:23 UTC]         12 |     cache['model'] = model
+[2025-07-01 07:22:23 UTC]     Local variables:
+[2025-07-01 07:22:23 UTC]       cache         = Cache({}, maxsize=1024, currsize=0)
+[2025-07-01 07:22:23 UTC]  FoundationModel "Gemini 2.5 Flash Preview-04-17" <v1>, line 2, in init
+[2025-07-01 07:22:23 UTC]          1 | def init():
+[2025-07-01 07:22:23 UTC] ---->    2 |     import google.generativeai as genai
+[2025-07-01 07:22:23 UTC]          3 |     import os 
+[2025-07-01 07:22:23 UTC] ModuleNotFoundError: No module named 'google.generativeai'
+[2025-07-01 07:22:24 UTC] Execution completed - 0 records ran successfully and 1 records had errors
+[2025-07-01 07:22:24 UTC] Got 0 records after execution. Unable to find any data to run reports on.

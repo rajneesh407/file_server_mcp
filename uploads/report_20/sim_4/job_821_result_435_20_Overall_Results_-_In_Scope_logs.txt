@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last):
+ Report "Response Stability Perturbed Utterance (Credit Card Pipeline)" <v1>, line 195, in <definition>
+       192 | expected_cols = ["output", "user_message"]
+       193 | missing = [col for col in expected_cols if col not in df.columns]
+       194 | if missing:
+---->  195 |     raise AssertionError(
+       196 |         f"Expected column(s) {missing} to be present but not provided in the data. "
+       197 |         "Please provide the column(s) and rerun."
+       198 |     )
+       200 | raw_output = {
+       201 |     "in_scope": compute_in_scope(df.copy(deep=True)),
+       202 |     "out_of_scope": compute_out_of_scope(df.copy(deep=True)),
+       203 | }
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-06-2025 05:30 PM">
+      data          = {'current': <spark df>}
+      expected_cols = ['output', 'user_message']
+      missing       = ['output']
+AssertionError: Expected column(s) ['output'] to be present but not provided in the data. Please provide the column(s) and rerun.
+Logs:
+[2025-09-06 12:01:49 UTC] Error occured while running Report "Response Stability Perturbed Utterance (Credit Card Pipeline)" definition

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report "Prompt Evaluation - (Generate Trust Score)" <v1>, line 161, in <definition>
+       154 |     overall_assessment = reviewers["Reviewer-1"](
+       155 |         improvement_details(test_prompt=prompt, review=str(metric_scores_and_reasoning))
+       156 |     )
+       157 |     return overall_readiness, metrics_df, tags_df, overall_assessment
+       160 | test_prompt = job.current.template
+---->  161 | overall_readiness, metrics_df, tags_df, pointers_for_improvement = evaluate(test_prompt)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+       162 | return {
+       163 |     "overall_readiness": overall_readiness,
+       164 |     "metrics_df": metrics_df,
+       165 |     "tags_df": tags_df,
+       166 |     "pointers_for_improvement": pointers_for_improvement,
+       167 | }
+    Local variables:
+      job           = <Job job_type="Simulati...: Jun-20-2025 02:16 PM">
+      data          = {'current': <spark df>}
+      test_prompt   = '\n### System Instructi...it any other Intents.\n'
+ Report "Prompt Evaluation - (Generate Trust Score)" <v1>, line 100, in evaluate
+        96 | def evaluate(prompt):
+        97 |     # FIXME : Add error handling for API failures
+        98 |     metric_scores_and_reasoning = {}
+        99 |     for metric, metric_prompt in quality_metrics.items():
+---->  100 |         current_metric = metric_prompt(test_prompt=prompt)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       101 |         # FIXME : Make this parallel
+    Local variables:
+      prompt        = '\n### System Instructi...it any other Intents.\n'
+      metric_scores_and_reasoning = {}
+      metric        = 'Grammatical Correctness'
+ Prompt "Grammatical Correctness" <v1>, line 1, in <definition>
+---->    1 |     return prompt.format(test_prompt=test_prompt)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      test_prompt   = '\n### System Instructi...it any other Intents.\n'
+      cache         = Cache({}, maxsize=1024, currsize=0)
+      prompt        = 'You are an expert in e... any)"]\n}}<END FORMAT>'
+KeyError: '"issue"'
+Logs:
+[2025-06-20 08:48:07 UTC] Error occured while running Report "Prompt Evaluation - (Generate Trust Score)" definition

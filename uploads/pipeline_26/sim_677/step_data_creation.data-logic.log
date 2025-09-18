@@ -1,0 +1,21 @@
+[2025-09-06 07:24:11 UTC] Preparing Evaluation #1
+[2025-09-06 07:24:17 UTC] Evaluation #1 returned a column "index" - but is not used.
+[2025-09-06 07:24:17 UTC] Evaluation #1 returned a column "require_facts" - but is not used.
+[2025-09-06 07:24:17 UTC] Evaluation #1 returned a column "baseline_message" - but is not used.
+[2025-09-06 07:24:17 UTC] Evaluation #1 returned a column "baseline_message_with_details" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "customer_id" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "filter_type" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "sub_filter_type" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "filter_value" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "sql_query" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "length" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "grammar_error" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "urgent" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "polite" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "sql_query_sqlite" - but is not used.
+[2025-09-06 07:24:18 UTC] Evaluation #1 returned a column "customer_name" - but is not used.
+[2025-09-06 07:24:24 UTC] Evaluation #1 preparation completed - 287 record(s) found
+[2025-09-06 07:24:24 UTC] Preparing Evaluation #2
+[2025-09-06 07:24:36 UTC] Evaluation #2 preparation completed - 1203 record(s) found
+[2025-09-06 07:24:36 UTC] Preparing input data for execution
+[2025-09-06 07:24:41 UTC] Final number of records that will be used for execution (from all data sources): 1490 record(s)

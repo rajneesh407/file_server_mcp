@@ -1,0 +1,7 @@
+[2025-09-06 12:01:25 UTC] Preparing Evaluation #1
+[2025-09-06 12:01:32 UTC] Evaluation #1 returned a column "customer_id" - but is not used.
+[2025-09-06 12:01:32 UTC] Evaluation #1 returned a column "baseline_message" - but is not used.
+[2025-09-06 12:01:32 UTC] Evaluation #1 returned a column "user_message" - but is not used.
+[2025-09-06 12:01:38 UTC] Evaluation #1 preparation completed - 1663 record(s) found
+[2025-09-06 12:01:38 UTC] Preparing input data for execution
+[2025-09-06 12:01:42 UTC] Final number of records that will be used for execution (from all data sources): 1663 record(s)

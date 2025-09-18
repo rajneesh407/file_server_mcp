@@ -1,0 +1,10 @@
+[2025-07-31 09:00:52 UTC] Error while creating execution plan for Job
+[2025-07-31 09:00:52 UTC] Traceback (most recent call last):
+[2025-07-31 09:00:52 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 661, in start_ingestion_job
+[2025-07-31 09:00:52 UTC]     exec_canvases = get_sim_exec_task(
+[2025-07-31 09:00:52 UTC]                     ^^^^^^^^^^^^^^^^^^
+[2025-07-31 09:00:52 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 149, in get_sim_exec_task
+[2025-07-31 09:00:52 UTC]     task.get_signature(
+[2025-07-31 09:00:52 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 173, in get_signature
+[2025-07-31 09:00:52 UTC]     raise ValueError(f"Given lang_spec={lang_spec} is not supported by {type(self)}")
+[2025-07-31 09:00:52 UTC] ValueError: Given lang_spec=duckdb-dataframe is not supported by <class 'corridor_api.tasks.ingestion_task.IngestionExecTask'>

@@ -1,0 +1,31 @@
+Error occured while generating Report Output "Overall Evaluation Pointers"
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last):
+ Report Output "Overall Evaluation Pointers" <v1>, line 69, in <definition>
+        47 |         html_output += "<hr style='border-top: 2px solid #bdc3c7; margin: 25px 0;'>"
+        49 |     html_output += """
+        50 |     <script>
+        51 |         var coll = document.getElementsByClassName("collapsible");
+(...)
+        64 |     </script>
+        65 |     """
+        66 |     return html_output
+---->   69 | return generate_pointers_html(raw_output)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Local variables:
+      job           = <Job job_type="Simulati...: Jun-20-2025 02:21 PM">
+      raw_output    = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...iased in all scenarios.', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+ Report Output "Overall Evaluation Pointers" <v1>, line 35, in generate_pointers_html
+        31 | for prompt_name, data in output_data.items():
+        32 |     if prompt_name == "current_prompt":
+        33 |         continue  # Skip current_prompt as it's handled above
+---->   35 |     challenger_readiness = data.get("overall_readiness", 0)
+                                        ^^^^^^^^
+        36 |     challenger_button_color = get_readiness_color(challenger_readiness)
+    Local variables:
+      output_data   = {'metrics_df': pandas.DataFrame[Metric: object, Score Reviewer-1: float64, Explanation Reviewer-1: object, Response Reviewer-1: object, Tags Reviewer-1: object, Mean Score: float64, common_tags: object], 'overall_readiness': 66.67, 'pointers_for_improvement': 'Based on a thorough an...iased in all scenarios.', 'tags_df': pandas.DataFrame[Metric: object, Category: object, is_fine: int64]}
+      html_output   = '\n        <h2 style="c...3c7; margin: 25px 0;\'>'
+      current_prompt_data = {}
+      prompt_name   = 'overall_readiness'
+      data          = 66.67
+AttributeError: 'numpy.float64' object has no attribute 'get'

@@ -1,0 +1,92 @@
+[2025-07-02 08:23:47 UTC] Starting Spark Job with 1 partition(s).
+[2025-07-02 08:23:52 UTC] Spark created 5 task(s): 0 ACTIVE, 5 COMPLETED, 0 FAILED tasks
+[2025-07-02 08:23:52 UTC] Processed all records
+[2025-07-02 08:23:52 UTC] ********** ERRORS **********
+[2025-07-02 08:23:52 UTC] [ERROR] 1 record(s) failed with ValueError: Missing key inputs argument! To use the Google AI API, provide (`api_key`) arguments. To use the Google Cloud API, provide (`vertexai`, `project` & `location`) arguments.
+[2025-07-02 08:23:52 UTC] ---------------------------------------------------------------------------
+[2025-07-02 08:23:52 UTC] ValueError                                Traceback (most recent call last):
+[2025-07-02 08:23:52 UTC]  FoundationModel "Gemini 2.5 Flash" <v1>, line 13, in <definition>
+[2025-07-02 08:23:52 UTC]         10 | if "client" in cache:
+[2025-07-02 08:23:52 UTC]         11 |     client = cache["client"]
+[2025-07-02 08:23:52 UTC]         12 | else:
+[2025-07-02 08:23:52 UTC] ---->   13 |     client = init()
+[2025-07-02 08:23:52 UTC]                           ^^^^^^
+[2025-07-02 08:23:52 UTC]         14 |     cache["client"] = client
+[2025-07-02 08:23:52 UTC]     Local variables:
+[2025-07-02 08:23:52 UTC]       text          = 'Hello'
+[2025-07-02 08:23:52 UTC]       temperature   = 1.0
+[2025-07-02 08:23:52 UTC]       cache         = Cache({}, maxsize=1024, currsize=0)
+[2025-07-02 08:23:52 UTC]  FoundationModel "Gemini 2.5 Flash" <v1>, line 7, in init
+[2025-07-02 08:23:52 UTC]          6 | def init():
+[2025-07-02 08:23:52 UTC] ---->    7 |     return genai.Client(api_key=os.getenv("GOOGLE_API_TOKEN"))
+[2025-07-02 08:23:52 UTC]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/google/genai/client.py", line 219, in Client.__init__
+[2025-07-02 08:23:52 UTC]        215 |     http_options.base_url = base_url
+[2025-07-02 08:23:52 UTC]        216 |   else:
+[2025-07-02 08:23:52 UTC]        217 |     http_options = HttpOptions(base_url=base_url)
+[2025-07-02 08:23:52 UTC] ---->  219 | self._api_client = self._get_api_client(
+[2025-07-02 08:23:52 UTC]                                 ^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        220 |     vertexai=vertexai,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        221 |     api_key=api_key,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        222 |     credentials=credentials,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        223 |     project=project,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        224 |     location=location,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        225 |     debug_config=self._debug_config,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        226 |     http_options=http_options,
+[2025-07-02 08:23:52 UTC]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        227 | )
+[2025-07-02 08:23:52 UTC]              ^
+[2025-07-02 08:23:52 UTC]        229 | self._aio = AsyncClient(self._api_client)
+[2025-07-02 08:23:52 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/google/genai/client.py", line 265, in Client._get_api_client
+[2025-07-02 08:23:52 UTC]        238 | @staticmethod
+[2025-07-02 08:23:52 UTC]        239 | def _get_api_client(
+[2025-07-02 08:23:52 UTC]        240 |     vertexai: Optional[bool] = None,
+[2025-07-02 08:23:52 UTC] (...)
+[2025-07-02 08:23:52 UTC]        246 |     http_options: Optional[HttpOptions] = None,
+[2025-07-02 08:23:52 UTC]        247 | ) -> BaseApiClient:
+[2025-07-02 08:23:52 UTC]        248 |   if debug_config and debug_config.client_mode in [
+[2025-07-02 08:23:52 UTC]        249 |       'record',
+[2025-07-02 08:23:52 UTC]        250 |       'replay',
+[2025-07-02 08:23:52 UTC]        251 |       'auto',
+[2025-07-02 08:23:52 UTC]        252 |   ]:
+[2025-07-02 08:23:52 UTC]        253 |     return ReplayApiClient(
+[2025-07-02 08:23:52 UTC]        254 |         mode=debug_config.client_mode,  # type: ignore[arg-type]
+[2025-07-02 08:23:52 UTC]        255 |         replay_id=debug_config.replay_id,  # type: ignore[arg-type]
+[2025-07-02 08:23:52 UTC] (...)
+[2025-07-02 08:23:52 UTC]        262 |         http_options=http_options,
+[2025-07-02 08:23:52 UTC]        263 |     )
+[2025-07-02 08:23:52 UTC] ---->  265 |   return BaseApiClient(
+[2025-07-02 08:23:52 UTC]                       ^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        266 |       vertexai=vertexai,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        267 |       api_key=api_key,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        268 |       credentials=credentials,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        269 |       project=project,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        270 |       location=location,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        271 |       http_options=http_options,
+[2025-07-02 08:23:52 UTC]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-07-02 08:23:52 UTC]        272 |   )
+[2025-07-02 08:23:52 UTC]                ^
+[2025-07-02 08:23:52 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/google/genai/_api_client.py", line 462, in BaseApiClient.__init__
+[2025-07-02 08:23:52 UTC]        459 |   self._http_options.api_version = 'v1beta1'
+[2025-07-02 08:23:52 UTC]        460 | else:  # Implicit initialization or missing arguments.
+[2025-07-02 08:23:52 UTC]        461 |   if not self.api_key:
+[2025-07-02 08:23:52 UTC] ---->  462 |     raise ValueError(
+[2025-07-02 08:23:52 UTC]        463 |         'Missing key inputs argument! To use the Google AI API,'
+[2025-07-02 08:23:52 UTC]        464 |         ' provide (`api_key`) arguments. To use the Google Cloud API,'
+[2025-07-02 08:23:52 UTC]        465 |         ' provide (`vertexai`, `project` & `location`) arguments.'
+[2025-07-02 08:23:52 UTC]        466 |     )
+[2025-07-02 08:23:52 UTC]        467 |   self._http_options.base_url = 'https://generativelanguage.googleapis.com/'
+[2025-07-02 08:23:52 UTC] ValueError: Missing key inputs argument! To use the Google AI API, provide (`api_key`) arguments. To use the Google Cloud API, provide (`vertexai`, `project` & `location`) arguments.
+[2025-07-02 08:23:59 UTC] Execution completed - 0 records ran successfully and 1 records had errors
+[2025-07-02 08:24:00 UTC] Got 0 records after execution. Unable to find any data to run reports on.

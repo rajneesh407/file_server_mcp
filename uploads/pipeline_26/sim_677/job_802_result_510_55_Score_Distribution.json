@@ -1,0 +1,1 @@
+{"columns":["Intent","Not Correct","Partial Correct","Fully Correct","Total"],"index":[0,1,2,3,4],"data":[["ACTIVATE CARD",0,0,60,60],["BLOCK CARD",0,4,52,56],["CARD DETAILS",0,2,56,58],["CHECK CARD ANNUAL FEE",0,4,53,57],["CHECK CURRENT BALANCE ON CARD",0,13,43,56]]}

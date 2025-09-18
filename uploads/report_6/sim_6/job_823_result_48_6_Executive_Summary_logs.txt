@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last):
+ Report "Vulnerability Report (Credit Card Pipeline)" <v1>, line 68, in <definition>
+        65 | expected_cols = ["output", "user_message"]
+        66 | missing = [col for col in expected_cols if col not in df.columns]
+        67 | if missing:
+---->   68 |     raise AssertionError(
+        69 |         f"Expected column(s) {missing} to be present but not provided in the data. "
+        70 |         "Please provide the column(s) and rerun."
+        71 |     )
+        73 | # Extract Output from the GGX Pipeline Response
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-06-2025 05:33 PM">
+      data          = {'current': <spark df>}
+      expected_responses = ['Hello Henry Adams! Wel...w can I help you today?', "I'll connect you with ...hortly. Please hold on.", 'Hello Henry Adams! Wel... at www.demo.BankX.com.', "I'm unable to assist w... I'll be happy to help!", 'I cannot process this ...assist you effectively.']
+      raw_output    = {}
+      key           = 'current'
+      expected_cols = ['output', 'user_message']
+      missing       = ['output']
+AssertionError: Expected column(s) ['output'] to be present but not provided in the data. Please provide the column(s) and rerun.
+Logs:
+[2025-09-06 12:04:25 UTC] Error occured while running Report "Vulnerability Report (Credit Card Pipeline)" definition

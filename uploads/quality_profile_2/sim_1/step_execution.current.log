@@ -1,0 +1,29 @@
+[2025-08-04 10:56:34 UTC] Traceback (most recent call last):
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 971, in set_canvas_step
+[2025-08-04 10:56:35 UTC]     yield logfile
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/simulation_task.py", line 1066, in run_canvas
+[2025-08-04 10:56:35 UTC]     taskdata_item = exec_canvas(taskdata_item)
+[2025-08-04 10:56:35 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/canvas.py", line 14, in __call__
+[2025-08-04 10:56:35 UTC]     out = item(*args, **kwargs)
+[2025-08-04 10:56:35 UTC]           ^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/canvas.py", line 14, in __call__
+[2025-08-04 10:56:35 UTC]     out = item(*args, **kwargs)
+[2025-08-04 10:56:35 UTC]           ^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 114, in run_artifact_task
+[2025-08-04 10:56:35 UTC]     with task_utils.log_runtime_info(job_ident, timeprefix), contextlib.ExitStack() as stack:
+[2025-08-04 10:56:35 UTC]   File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 601, in __exit__
+[2025-08-04 10:56:35 UTC]     raise exc_details[1]
+[2025-08-04 10:56:35 UTC]   File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 586, in __exit__
+[2025-08-04 10:56:35 UTC]     if cb(*exc_details):
+[2025-08-04 10:56:35 UTC]        ^^^^^^^^^^^^^^^^
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 144, in run_artifact_task
+[2025-08-04 10:56:35 UTC]     self.write_data(
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/tasks/base_execution_task.py", line 67, in write_data
+[2025-08-04 10:56:35 UTC]     task_utils.write_data(data, data_info)
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/task_utils.py", line 603, in write_data
+[2025-08-04 10:56:35 UTC]     if infer_data_type(data) == "duckdb-dataframe":
+[2025-08-04 10:56:35 UTC]        ^^^^^^^^^^^^^^^^^^^^^
+[2025-08-04 10:56:35 UTC]   File "/opt/corridor/venv/lib/python3.11/site-packages/corridor_api/util/task_utils.py", line 318, in infer_data_type
+[2025-08-04 10:56:35 UTC]     raise NotImplementedError(f"Unable to infer type of data: {type(data)}")
+[2025-08-04 10:56:35 UTC] NotImplementedError: Unable to infer type of data: <class 'NoneType'>

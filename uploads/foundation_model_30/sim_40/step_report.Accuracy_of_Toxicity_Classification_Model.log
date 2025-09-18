@@ -1,0 +1,91 @@
+[2025-09-03 12:04:26 UTC] Report execution completed. Generating outputs...
+[2025-09-03 12:04:31 UTC] Error occured while generating Report Output "Summary metrics"
+[2025-09-03 12:04:31 UTC] ---------------------------------------------------------------------------
+[2025-09-03 12:04:31 UTC] KeyError                                  Traceback (most recent call last):
+[2025-09-03 12:04:31 UTC]  Report Figure "Summary metrics" <v1>, line 159, in <definition>
+[2025-09-03 12:04:31 UTC]         55 |     final_html = f"""
+[2025-09-03 12:04:31 UTC]         56 | <!DOCTYPE html>
+[2025-09-03 12:04:31 UTC]         57 | <html lang="en">
+[2025-09-03 12:04:31 UTC] (...)
+[2025-09-03 12:04:31 UTC]        154 | </html>
+[2025-09-03 12:04:31 UTC]        155 | """
+[2025-09-03 12:04:31 UTC]        156 |     return final_html
+[2025-09-03 12:04:31 UTC]        158 | metrics_df = raw_output["metrics"].copy(deep=True)
+[2025-09-03 12:04:31 UTC] ---->  159 | return generate_metrics_report_html(metrics_df)
+[2025-09-03 12:04:31 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 12:04:31 UTC]     Local variables:
+[2025-09-03 12:04:31 UTC]       job           = <Job job_type="Simulati...: Sep-03-2025 05:30 PM">
+[2025-09-03 12:04:31 UTC]       raw_output    = {'data': pandas.DataFrame[user_message: object, target_score: int64, target_category: object, temp_toxicity_output: object, predicted_score: int64, is_match: bool], 'metrics': pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]}
+[2025-09-03 12:04:31 UTC]       metrics_df    = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+[2025-09-03 12:04:31 UTC]  Report Figure "Summary metrics" <v1>, line 2, in generate_metrics_report_html
+[2025-09-03 12:04:31 UTC]          1 | def generate_metrics_report_html(raw_output):
+[2025-09-03 12:04:31 UTC] ---->    2 |     overall_metrics = raw_output.loc[raw_output["intent"] == "Overall"].iloc[0]
+[2025-09-03 12:04:31 UTC]                                                   ^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 12:04:31 UTC]          3 |     per_category_metrics = raw_output.loc[raw_output["intent"] != "Overall"]
+[2025-09-03 12:04:31 UTC]     Local variables:
+[2025-09-03 12:04:31 UTC]       raw_output    = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+[2025-09-03 12:04:31 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+[2025-09-03 12:04:31 UTC]       3804 | if is_single_key:
+[2025-09-03 12:04:31 UTC]       3805 |     if self.columns.nlevels > 1:
+[2025-09-03 12:04:31 UTC]       3806 |         return self._getitem_multilevel(key)
+[2025-09-03 12:04:31 UTC] ----> 3807 |     indexer = self.columns.get_loc(key)
+[2025-09-03 12:04:31 UTC]                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 12:04:31 UTC]       3808 |     if is_integer(indexer):
+[2025-09-03 12:04:31 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+[2025-09-03 12:04:31 UTC]       3801 | try:
+[2025-09-03 12:04:31 UTC]       3802 |     return self._engine.get_loc(casted_key)
+[2025-09-03 12:04:31 UTC]       3803 | except KeyError as err:
+[2025-09-03 12:04:31 UTC] ----> 3804 |     raise KeyError(key) from err
+[2025-09-03 12:04:31 UTC]       3805 | except TypeError:
+[2025-09-03 12:04:31 UTC]       3806 |     # If we have a listlike key, _check_indexing_error will raise
+[2025-09-03 12:04:31 UTC]       3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+[2025-09-03 12:04:31 UTC]       3808 |     #  the TypeError.
+[2025-09-03 12:04:31 UTC] KeyError: 'intent'
+[2025-09-03 12:04:33 UTC] Error occured while generating Report Output "Performance by Category"
+[2025-09-03 12:04:33 UTC] ---------------------------------------------------------------------------
+[2025-09-03 12:04:33 UTC] KeyError                                  Traceback (most recent call last):
+[2025-09-03 12:04:33 UTC]  Report Figure "Performance by Category" <v1>, line 97, in <definition>
+[2025-09-03 12:04:33 UTC]         50 |     initial_metric = metrics[0]
+[2025-09-03 12:04:33 UTC]         51 |     fig.update_layout(
+[2025-09-03 12:04:33 UTC]         52 |         title=f"<b>Distribution of {initial_metric} across all toxicity categories.</b>",
+[2025-09-03 12:04:33 UTC]         53 |         xaxis_title="Toxicity Category",
+[2025-09-03 12:04:33 UTC] (...)
+[2025-09-03 12:04:33 UTC]         93 |         ],
+[2025-09-03 12:04:33 UTC]         94 |     )
+[2025-09-03 12:04:33 UTC]         95 |     return fig
+[2025-09-03 12:04:33 UTC] ---->   97 | return plot_category_coverage(raw_output["metrics"])
+[2025-09-03 12:04:33 UTC]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 12:04:33 UTC]     Local variables:
+[2025-09-03 12:04:33 UTC]       job           = <Job job_type="Simulati...: Sep-03-2025 05:30 PM">
+[2025-09-03 12:04:33 UTC]       raw_output    = {'data': pandas.DataFrame[user_message: object, target_score: int64, target_category: object, temp_toxicity_output: object, predicted_score: int64, is_match: bool], 'metrics': pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]}
+[2025-09-03 12:04:33 UTC]  Report Figure "Performance by Category" <v1>, line 7, in plot_category_coverage
+[2025-09-03 12:04:33 UTC]          3 | def plot_category_coverage(df):
+[2025-09-03 12:04:33 UTC]          4 |     metrics = ["Accuracy", "Precision", "Recall", "F1-Score", "Kendall's Tau"]
+[2025-09-03 12:04:33 UTC]          5 |     fig = go.Figure()
+[2025-09-03 12:04:33 UTC] ---->    7 |     categories_df = df[df["intent"] != "Overall"]
+[2025-09-03 12:04:33 UTC]                                     ^^^^^^^^^^^^
+[2025-09-03 12:04:33 UTC]          8 |     target = job.parameters.get("threshold") or 90
+[2025-09-03 12:04:33 UTC]     Local variables:
+[2025-09-03 12:04:33 UTC]       df            = pandas.DataFrame[target_category: object, Accuracy: float64, Recall: float64, Precision: float64, F1-Score: float64, Kendall's Tau: float64]
+[2025-09-03 12:04:33 UTC]       metrics       = ['Accuracy', 'Precision', 'Recall', 'F1-Score', "Kendall's Tau"]
+[2025-09-03 12:04:33 UTC]       fig           = Figure({
+[2025-09-03 12:04:33 UTC]                           'data': []...: {'template': '...'}
+[2025-09-03 12:04:33 UTC]                       })
+[2025-09-03 12:04:33 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/frame.py", line 3807, in DataFrame.__getitem__
+[2025-09-03 12:04:33 UTC]       3804 | if is_single_key:
+[2025-09-03 12:04:33 UTC]       3805 |     if self.columns.nlevels > 1:
+[2025-09-03 12:04:33 UTC]       3806 |         return self._getitem_multilevel(key)
+[2025-09-03 12:04:33 UTC] ----> 3807 |     indexer = self.columns.get_loc(key)
+[2025-09-03 12:04:33 UTC]                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-03 12:04:33 UTC]       3808 |     if is_integer(indexer):
+[2025-09-03 12:04:33 UTC]  File "/opt/corridor/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3804, in Index.get_loc
+[2025-09-03 12:04:33 UTC]       3801 | try:
+[2025-09-03 12:04:33 UTC]       3802 |     return self._engine.get_loc(casted_key)
+[2025-09-03 12:04:33 UTC]       3803 | except KeyError as err:
+[2025-09-03 12:04:33 UTC] ----> 3804 |     raise KeyError(key) from err
+[2025-09-03 12:04:33 UTC]       3805 | except TypeError:
+[2025-09-03 12:04:33 UTC]       3806 |     # If we have a listlike key, _check_indexing_error will raise
+[2025-09-03 12:04:33 UTC]       3807 |     #  InvalidIndexError. Otherwise we fall through and re-raise
+[2025-09-03 12:04:33 UTC]       3808 |     #  the TypeError.
+[2025-09-03 12:04:33 UTC] KeyError: 'intent'
+[2025-09-03 12:04:35 UTC] All 14 outputs and additional figures processed.

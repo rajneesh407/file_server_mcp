@@ -1,0 +1,13 @@
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last):
+ Report Additional Figure "Failure Records" <v1>, line 1, in <definition>
+---->    1 |     df = raw_output[job.current.name]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         2 |     df = df[~df["fact_check_status"].isin(["VERY HIGH", "HIGH"])].copy()[
+         3 |         ["user_message", "intent", "response", "fact_check_status", "fact_check_reason", "fact_check_logs", "output"]
+         4 |     ]
+    Local variables:
+      job           = <Job job_type="Simulati..."Example Dashboard Run">
+      raw_output    = {'CorridorPlatforms Bot': pandas.DataFrame[output: object, intent: object, length: object, ground_truth: object, group_id: object, grammar_error: object, urgent: object, polite: object, category: object, query_category: object, scenario: object, evaluation: object, user_message: object, history: object, context: object, response: object, context_logs: object, db_output: object, cosine_similarity: float64, temp_llm_fact: object, fact_check_status: object, fact_check_reason: object, fact_check_logs: object, temp_llm_similarity: object, llm_answer_relevancy: object, llm_answer_relevancy_reason: object]}
+KeyError: 'CorridorPlatforms Website Bot'

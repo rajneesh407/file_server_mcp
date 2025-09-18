@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last):
+ Report "Prompt Quality Evaluation" <v1>, line 13, in <definition>
+         1 | import json
+         2 | import pandas as pd
+         4 | quality_metrics = {
+         5 |     "Grammatical Correctness": grammatical_correctness,
+         6 |     "Clarity": clarity,
+(...)
+        10 |     "Bias Safety Score": bias_safety_score,
+        11 | }
+---->   13 | reviewers = {"Reviewer-1": gemini_2_0_flash}
+                                        ^^^^^^^^^^^^^^^^
+        16 | def get_tags_df():
+    Local variables:
+      job           = <Job job_type="Simulati...: Sep-04-2025 08:30 PM">
+      data          = {'current': <spark df>}
+NameError: name 'gemini_2_0_flash' is not defined
+Logs:
+[2025-09-04 15:02:16 UTC] Error occured while running Report "Prompt Quality Evaluation" definition
